@@ -15,6 +15,15 @@ magick convert tx_siltstrider_skin_12.dds tx_siltstrider_skin_06.dds tx_siltstri
 
 magick convert ATL/temp1.bmp ATL/temp2.bmp ATL/temp3.bmp ATL/temp4.bmp ATL/temp7.bmp ATL/temp9.bmp ATL/temp10.bmp -append -resize %resolutionW% -define dds:compression=dxt1 ATL/atlad_siltstrider.dds
 
+
+magick convert tx_siltstrider_dead_02.dds tx_siltstrider_dead_03.dds +append ATL/temp11.bmp
+magick convert tx_siltstrider_dead_04.dds tx_siltstrider_dead_04.dds -rotate 90 +append ATL/temp12.bmp
+magick convert tx_siltstrider_dead_05.dds tx_siltstrider_dead_05.dds -append ATL/temp13.bmp
+magick convert tx_siltstrider_dead_06.dds tx_siltstrider_dead_11.dds ATL/temp13.bmp ATL/temp13.bmp +append ATL/temp14.bmp
+
+magick convert tx_siltstrider_dead_00.dds tx_siltstrider_dead_01.dds ATL/temp11.bmp tx_siltstrider_dead_07.dds ATL/temp12.bmp ATL/temp14.bmp -append -resize %resolutionW% -define dds:compression=dxt1 ATL/atlad_siltstrider_d.dds
+
+
 cd ATL
 del "temp1.bmp"
 del "temp2.bmp"
@@ -26,3 +35,7 @@ del "temp7.bmp"
 del "temp8.bmp"
 del "temp9.bmp"
 del "temp10.bmp"
+del "temp11.bmp"
+del "temp12.bmp"
+del "temp13.bmp"
+del "temp14.bmp"
