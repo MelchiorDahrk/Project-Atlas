@@ -5,7 +5,7 @@ set /A resolutionH=%resolutionW%*4
 
 magick convert tx_redoran_barracks_trim.dds tx_redoran_barracks_trim.dds +append ATL/temp1.bmp
 magick convert tx_border_redoran_step_01.dds tx_border_redoran_step_01.dds +append ATL/temp2.bmp
-magick convert tx_block_adobe_white_01.dds tx_block_adobe_white_01.dds +append ATL/temp3.bmp
+magick convert tx_block_adobe_white_01.dds tx_redoran_hut_03.dds +append ATL/temp3.bmp
 magick convert tx_redoran_brokenedge_01.dds tx_redoran_brokenedge_01.dds tx_redoran_brokenedge_01.dds tx_redoran_brokenedge_01.dds +append ATL/temp4.bmp
 
 magick convert tx_redoran_marble_red.dds tx_redoran_marble_white.dds tx_redoran_tavern_01.dds ATL/temp1.bmp ATL/temp1.bmp ATL/temp2.bmp ATL/temp3.bmp ATL/temp3.bmp -resize %resolutionW% -append -gravity north -background black -extent x%resolutionH% -define dds:compression=dxt1 ATL/tx_redoran_atlas.dds
