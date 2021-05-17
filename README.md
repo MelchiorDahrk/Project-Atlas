@@ -5,7 +5,7 @@ AtlAd is an unofficial add-on to [Project Atlas](https://www.nexusmods.com/morro
 
 Installation Order
 
-[Patch for Purists](https://www.nexusmods.com/morrowind/mods/45096) > [Morrowind Optimization Patch](https://www.nexusmods.com/morrowind/mods/45384) > (if applicable) [Glow in the Dahrk](https://www.nexusmods.com/morrowind/mods/45886) > [Project Atlas}(https://www.nexusmods.com/morrowind/mods/45399) (including GitD patches, if needed) > [Graphic Herbalism](https://www.nexusmods.com/morrowind/mods/46599) (including applicable Project Atlas patches) > (if applicable) [Intelligent Textures](https://www.nexusmods.com/morrowind/mods/47469) (including atlas patch) > AtlAd > any additional cosmetic mesh replacers
+[Patch for Purists](https://www.nexusmods.com/morrowind/mods/45096) > [Morrowind Optimization Patch](https://www.nexusmods.com/morrowind/mods/45384) > (if applicable) [Glow in the Dahrk](https://www.nexusmods.com/morrowind/mods/45886) > [Project Atlas](https://www.nexusmods.com/morrowind/mods/45399) (including GitD patches, if needed) > [Graphic Herbalism](https://www.nexusmods.com/morrowind/mods/46599) (including applicable Project Atlas patches) > (if applicable) [Intelligent Textures](https://www.nexusmods.com/morrowind/mods/47469) (including atlas patch) > AtlAd > any additional cosmetic mesh replacers
 
 - Install the Core folder by moving the contents into your Morrowind/Data Files folder. For nay of these steps, say yes to all if prompted to overwrite
 - If you use any texture replacers other than Intelligent Textures, move the contents of the BATs folder into Data Files/Textures, and follow the instructions for patching texture mods later on
@@ -37,6 +37,3 @@ AtlAd replaces most, but not all PA meshes. Patches made for PA will always work
 [Parasol Particles](https://www.nexusmods.com/morrowind/mods/47755) - Install the patch hosted [>here<](https://www.nexusmods.com/morrowind/mods/48923)
 [Mushroom Tree Replacer](https://www.nexusmods.com/morrowind/mods/45350) by PeterBitt - Includes its own atlased meshes. Install after AtlAd and allow overwrite.
 [Telvanni Bump Maps](https://www.nexusmods.com/morrowind/mods/42431)/[Vivec Bump Maps](https://www.nexusmods.com/morrowind/mods/40199) - Incompatible. Install after AtlAd and allow overwrite if you want the full features of the mod. If you're fine with only the new textures, install only that folder and regerate atlases.
-
-
-
