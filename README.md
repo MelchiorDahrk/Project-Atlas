@@ -5,7 +5,7 @@ AtlAd is an unofficial add-on to [Project Atlas](https://www.nexusmods.com/morro
 
 Installation Order
 
-[Patch for Purists](https://www.nexusmods.com/morrowind/mods/45096) > [Morrowind Optimization Patch](https://www.nexusmods.com/morrowind/mods/45384) > (if applicable) [Glow in the Dahrk](https://www.nexusmods.com/morrowind/mods/45886) > [Project Atlas](https://www.nexusmods.com/morrowind/mods/45399) (including GitD patches, if needed) > [Graphic Herbalism](https://www.nexusmods.com/morrowind/mods/46599) (including applicable Project Atlas patches) > (if applicable) [Intelligent Textures](https://www.nexusmods.com/morrowind/mods/47469) (including atlas patch) > AtlAd > any additional cosmetic mesh replacers
+[Morrowind Optimization Patch](https://www.nexusmods.com/morrowind/mods/45384) > (if applicable) [Glow in the Dahrk](https://www.nexusmods.com/morrowind/mods/45886) > [Project Atlas](https://www.nexusmods.com/morrowind/mods/45399) (including GitD patches, if needed) > [Graphic Herbalism](https://www.nexusmods.com/morrowind/mods/46599) (including applicable Project Atlas patches) > (if applicable) [Intelligent Textures](https://www.nexusmods.com/morrowind/mods/47469) (including atlas patch) > AtlAd > any additional cosmetic mesh or texture replacers
 
 - Install the Core folder by moving the contents into your Morrowind/Data Files folder. For nay of these steps, say yes to all if prompted to overwrite
 - If you use any texture replacers other than Intelligent Textures, move the contents of the BATs folder into Data Files/Textures, and follow the instructions for patching texture mods later on
