@@ -27,13 +27,13 @@ Compatability
 Mesh replacers are generally not compatible with AtlAd, unless the two have no overlap (not unlikely), or there is an available patch.
 
 [Project Atlas](https://www.nexusmods.com/morrowind/mods/45399) - AtlAd is an expansion, not a full replacement to PA, and they should be used together. AtlAd replaces three textures/BATs from PA (atlas_woodpoles.dds, tx_redoran_atlas.dds, and tx_redwall_atlas.dds) and should therefore win any overwrite conflicts with both PA and Intelligent Textures to make sure AtlAd's meshes appear correctly.  
-PA's included smoothed mesh for urns is not compatible. Install this individual option after AtlAd.  
+PA's optional smoothed meshes are not compatible. Install these individual options after AtlAd.  
 PA's included wood pole texture replacer may not be compatible depending on your setup. Check your results in the Textures/ATL folder after you patch your texture atlases and see if it was improperly generated.  
 AtlAd replaces most, but not all PA meshes. Patches made for PA will always work for AtlAd, however.  
 [Morrowind Optimization Patch](https://www.nexusmods.com/morrowind/mods/45384) - fully compatible. AtlAd carries over all MOP changes.  
 [Graphic Herbalism](https://www.nexusmods.com/morrowind/mods/46599) - Fully compatible. Grab the patch from the "GH Patches and Replacers" file.  
-[Glowing Bitter Coast](http://mw.modhistory.com/download-44-14321) - Compatible. Install the Glowing Bitter Coast - Atlas patch from GH's page above. An adjsuted patch will be made in the future.  
-[Glowing Flames](https://www.nexusmods.com/morrowind/mods/46124) - Minor visual conflict. Install before AtlAd. Patch will be made in the future.  
+[Glowing Bitter Coast](http://mw.modhistory.com/download-44-14321) - Compatible. Install the Glowing Bitter Coast - Atlas patch from GH's page above. An adjusted patch will be made in the future.  
+[Glowing Flames](https://www.nexusmods.com/morrowind/mods/46124) - Minor visual conflict. Install after AtlAd. Patch will be made in the future.  
 [Parasol Particles](https://www.nexusmods.com/morrowind/mods/47755) - Install the patch hosted [>here<](https://www.nexusmods.com/morrowind/mods/48923)  
 [Mushroom Tree Replacer](https://www.nexusmods.com/morrowind/mods/45350) by PeterBitt - Includes its own atlased meshes. Install after AtlAd and allow overwrite.  
-[Telvanni Bump Maps](https://www.nexusmods.com/morrowind/mods/42431)/[Vivec Bump Maps](https://www.nexusmods.com/morrowind/mods/40199) - Incompatible. Install after AtlAd and allow overwrite if you want the full features of the mod. If you're fine with only the new textures, install only that folder and regerate atlases.
+[Telvanni Bump Maps](https://www.nexusmods.com/morrowind/mods/42431)/[Vivec Bump Maps](https://www.nexusmods.com/morrowind/mods/40199) - Incompatible. Install after AtlAd and allow overwrite if you want the full features of the mod. If you're fine with only the new textures, install only that folder and regenerate atlases.
