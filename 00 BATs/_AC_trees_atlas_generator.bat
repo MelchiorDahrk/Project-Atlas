@@ -10,3 +10,6 @@ magick convert Tx_mushroom_01.dds Tx_mushroom_02.dds Tx_mushroom_04.dds ATL/temp
 cd ATL
 del "temp1.bmp"
 del "temp2.bmp"
+cd ..
+
+if not defined run_without_pause pause

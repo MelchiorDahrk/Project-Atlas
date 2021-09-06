@@ -8,3 +8,6 @@ magick convert tx_bm_ic_cavedoor_01.dds ATL/temp1.bmp -resize %resolutionW% -app
 
 cd ATL
 del "temp1.bmp"
+cd ..
+
+if not defined run_without_pause pause

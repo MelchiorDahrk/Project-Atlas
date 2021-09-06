@@ -39,3 +39,6 @@ del "temp11.bmp"
 del "temp12.bmp"
 del "temp13.bmp"
 del "temp14.bmp"
+cd ..
+
+if not defined run_without_pause pause

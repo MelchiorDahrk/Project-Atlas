@@ -16,3 +16,6 @@ del boe00.bmp
 del boe01.bmp
 del boe02.bmp
 del boe03.bmp
+cd ..
+
+if not defined run_without_pause pause

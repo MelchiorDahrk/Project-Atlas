@@ -11,3 +11,6 @@ magick convert tx_metal_silver_plate_01.dds tx_metal_silver_strip_01.dds tx_meta
 cd ATL
 del "temp1.bmp"
 del "temp2.bmp"
+cd ..
+
+if not defined run_without_pause pause
