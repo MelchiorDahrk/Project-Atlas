@@ -65,7 +65,6 @@ del "temp14.bmp"
 del "temp15.bmp"
 del "temp16.bmp"
 del "temp17.bmp"
-del "temp18.bmp"
 cd ..
 
 if not defined run_without_pause pause
