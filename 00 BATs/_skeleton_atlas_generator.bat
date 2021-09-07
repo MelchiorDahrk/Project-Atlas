@@ -29,3 +29,6 @@ del "temp7.bmp"
 del "temp8.bmp"
 del "temp9.bmp"
 del "temprib.bmp"
+cd ..
+
+if not defined run_without_pause pause

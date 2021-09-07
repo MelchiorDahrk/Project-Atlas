@@ -14,3 +14,6 @@ del az00.bmp
 del az001.bmp
 del az1.bmp
 del az2.bmp
+cd ..
+
+if not defined run_without_pause pause

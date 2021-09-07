@@ -13,3 +13,6 @@ cd "ATL"
 del temp1.bmp
 del temp2.bmp
 del temp3.bmp
+cd ..
+
+if not defined run_without_pause pause
