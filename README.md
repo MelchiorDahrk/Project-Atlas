@@ -37,5 +37,5 @@ AtlAd replaces most, but not all PA meshes. Patches made for PA will always work
 [Glowing Flames](https://www.nexusmods.com/morrowind/mods/46124) - Minor visual conflict. Install after AtlAd. Patch will be made in the future.  
 [Parasol Particles](https://www.nexusmods.com/morrowind/mods/47755) - Install the patch hosted [>here<](https://www.nexusmods.com/morrowind/mods/48923)  
 [Mushroom Tree Replacer](https://www.nexusmods.com/morrowind/mods/45350) by PeterBitt - Includes its own atlased meshes. Install after AtlAd and allow overwrite.  
-[Telvanni Bump Maps](https://www.nexusmods.com/morrowind/mods/42431)/[Vivec Bump Maps](https://www.nexusmods.com/morrowind/mods/40199) - Incompatible. Install after AtlAd and allow overwrite if you want the full features of the mod. If you're fine with only the new textures, install only that folder and regenerate atlases.
-[Weapon Sheathing](https://www.nexusmods.com/morrowind/mods/46069) - Compatible. Patch included in main archive.
+[Telvanni Bump Maps](https://www.nexusmods.com/morrowind/mods/42431)/[Vivec Bump Maps](https://www.nexusmods.com/morrowind/mods/40199) - Incompatible. Install after AtlAd and allow overwrite if you want the full features of the mod. If you're fine with only the new textures, install only that folder and regenerate atlases. 
+[Weapon Sheathing](https://www.nexusmods.com/morrowind/mods/46069) - Compatible. Patch included in main archive. 
