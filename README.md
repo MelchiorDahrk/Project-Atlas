@@ -10,7 +10,7 @@ Installation Order
 - Install the Core folder by moving the contents into your Morrowind/Data Files folder. For any of these steps, say yes to all if prompted to overwrite
 - If you use any texture replacers other than Intelligent Textures, move the contents of the BATs folder into Data Files/Textures, and follow the instructions for patching texture mods later on
 - Install one of the two textures folders, based on your preferred resolution
-- if you use GitD, install the GitD patch. if you also use the Interior Sunrays option, install the sunrays patch as well after the main patch
+- if you use GitD, install the GitD patch. 
 
 
 Patching
@@ -27,7 +27,7 @@ Compatability
 
 Mesh replacers are generally not compatible with AtlAd, unless the two have no overlap (not unlikely), or there is an available patch.
 
-[Project Atlas](https://www.nexusmods.com/morrowind/mods/45399) - AtlAd is an expansion, not a full replacement to PA, and they should be used together. AtlAd replaces three textures/BATs from PA (atlas_woodpoles.dds, tx_redoran_atlas.dds, and tx_redwall_atlas.dds) and should therefore win any overwrite conflicts with both PA and Intelligent Textures to make sure AtlAd's meshes appear correctly.  
+[Project Atlas](https://www.nexusmods.com/morrowind/mods/45399) - AtlAd is an expansion, not a full replacement to PA, and they should be used together. AtlAd replaces four textures/BATs from PA (atlas_woodpoles.dds, tx_redoran_atlas.dds, tx_redwall_atlas.dds, and atlas_velothi.dds) and should therefore win any overwrite conflicts with both PA and Intelligent Textures to make sure AtlAd's meshes appear correctly.  
 PA's optional smoothed meshes are not compatible. Install these individual options after AtlAd.  
 PA's included wood pole texture replacer may not be compatible depending on your setup. Check your results in the Textures/ATL folder after you patch your texture atlases and see if it was improperly generated.  
 AtlAd replaces most, but not all PA meshes. Patches made for PA will always work for AtlAd, however.  
