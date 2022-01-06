@@ -172,8 +172,13 @@ if %_inputEval% EQU 34 (
 call urn_atlas_generator.bat
 )
 if %_inputEval% EQU 35 (
-@echo Generating velothi tileset atlas.
-call velothi_atlas_generator.bat
+    @echo Generating velothi tileset atlas.
+    if not exist "_velothi_atlas_generator.bat" (
+        call velothi_atlas_generator.bat
+    )
+    if exist "_velothi_atlas_generator.bat" (
+        call _velothi_atlas_generator.bat
+    )
 )
 if %_inputEval% EQU 36 (
 @echo Generating wood docks atlas.
@@ -189,7 +194,7 @@ if %_inputEval% EQU 37 (
     )
 )
 if %_inputEval% EQU 38 (
-    @echo Starting to build all atlasses.
+    @echo Starting to build all atlases.
     if exist "_ashtree_atlas_generator.bat" (
         @echo Generating ashtree atlas.
         call "_ashtree_atlas_generator.bat"
