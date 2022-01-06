@@ -15,7 +15,7 @@ magick convert tx_metal_6th_top.dds tx_metal_6th_bells_top.dds tx_metal_6th_bell
 
 magick convert tx_ash_firepit.dds tx_ash_firepit.dds +append ATL/temp7.bmp
 
-magick convert tx_glass_6th_ashaltar.dds tx_stone_6th_ashstatue.dds ATL/temp7.bmp tx_glass_obsidian_strip.dds tx_stone_6th_trim_02.dds -background "#312c28" -append -resize %resolution2% -extent x%resolutionH% -define dds:compression=dxt1 ATL/atlad_6th01.dds
+magick convert tx_glass_6th_ashaltar.dds tx_stone_6th_ashstatue.dds tx_stone_6th_ashstatue.dds ATL/temp7.bmp tx_glass_obsidian_strip.dds tx_stone_6th_trim_02.dds -background "#312c28" -append -resize %resolution2% -extent x%resolutionH% -define dds:compression=dxt1 ATL/atlad_6th01.dds
 
 cd ATL
 del temp1.bmp
