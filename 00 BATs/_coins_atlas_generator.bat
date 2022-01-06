@@ -10,6 +10,6 @@ magick convert tx_cointop_01.dds ATL/temp1.bmp ATL/temp1.bmp ATL/temp1.bmp ATL/t
 cd ATL
 del temp1.bmp
 del temp2.bmp
-cd ...
+cd ..
 
 if not defined run_without_pause pause
