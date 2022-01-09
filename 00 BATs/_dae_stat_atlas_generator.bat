@@ -1,6 +1,7 @@
 @echo off
 if not exist ATL mkdir ATL
 for /f %%i in ('magick convert tx_daed_azura_face.dds -format %%w info:') do set resolutionW=%%i
+set /A resolutionH=%resolutionW%*2
 
 magick convert tx_daed_azura_headthing.dds tx_daed_azura_flowerpetal.dds tx_daed_azura_ear.dds -background "#3e3433" +append -gravity west ATL/az00.bmp
 magick convert ATL/az00.bmp tx_daed_azura_hand.dds -background "#3e3433" -append ATL/az001.bmp
