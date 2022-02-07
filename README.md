@@ -1,4 +1,4 @@
-# AtlAd
+# Project Atlas
 
 AtlAd is an unofficial add-on to [Project Atlas](https://www.nexusmods.com/morrowind/mods/45399) which seeks to maintain parity with the [Morrowind Optimization Patch](https://www.nexusmods.com/morrowind/mods/45384), further improve performance on existing meshes, and expand the mod by covering additional sets.
 
