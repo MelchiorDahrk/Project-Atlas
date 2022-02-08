@@ -36,10 +36,10 @@ Archive is set up to use Sub-Packages for Mash Installers:
 
 	02 Urns - Smoothed --- Smoothed mesh replacer for urns
 	03 Redware - Smoothed --- Smoothed mesh replacer for redware pottery
-	04 Wood Poles - Hi Res Texture --- Texture replacer for wood poles and rope
+	04 Redware - Smoothed --- Smoothed mesh replacer for redware pottery
+	05 Wood Poles - Hi Res Texture --- Texture replacer for wood poles and rope
 	
-	05 Glow in the Dahrk Patch --- Includes patches for all atlas sets
-	06 Glow in the Dahrk - Raven Rock Glass Windows --- Patch for GitD's RR glass windows
+	06 Glow in the Dahrk Patch --- Includes patches for all atlas sets
 
 	07 Graphic Herbalism Patch --- adds GH support to Bitter Coast mushrooms
 
