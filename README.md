@@ -1,41 +1,162 @@
 # Project Atlas
 
-AtlAd is an unofficial add-on to [Project Atlas](https://www.nexusmods.com/morrowind/mods/45399) which seeks to maintain parity with the [Morrowind Optimization Patch](https://www.nexusmods.com/morrowind/mods/45384), further improve performance on existing meshes, and expand the mod by covering additional sets.
+Project Atlas
+Version: 0.7.0
 
+======= About Project Atlas  =======
+Vanilla Morrowind has objects split into different shapes each using its own unique texture. This is bad for performance and is one of the game's primary FPS bottlenecks. Each shape (even within a single mesh file) requires its own drawcall. There are close to 5,000 different textures in Morrowind's data; many of which are very similar or outright identical and some meshes are split into more than 75 different shapes. Merging those meshes into a single shape which references a single texture atlas is the ideal situation for game performance.
 
-Installation Order
+The goal of Project Atlas is to identify the most performance heavy areas of vanilla Morrowind and some popular mods and target high usage/strain meshes in those areas for atlasing. This effort involves reworking the UVs for those meshes and creating texture atlases to cover various sets.
 
-[Weapon Sheathing](https://www.nexusmods.com/morrowind/mods/46069) > [Morrowind Optimization Patch](https://www.nexusmods.com/morrowind/mods/45384) (including Weapon Sheathing patch) > (if applicable) [Glow in the Dahrk](https://www.nexusmods.com/morrowind/mods/45886) > [Project Atlas](https://www.nexusmods.com/morrowind/mods/45399) (including GitD patches, if needed) > [Graphic Herbalism](https://www.nexusmods.com/morrowind/mods/46599) (including applicable Project Atlas patches) > (if applicable) [Intelligent Textures](https://www.nexusmods.com/morrowind/mods/47469) (including atlas patch) > AtlAd > any additional cosmetic mesh or texture replacers
+======= Installation =======
+
+Order of
+installation
+==============
+
+Below is a list of other commonly used mods which may conflict. For any mods not included, generally:
+If the mod is ONLY for mesh-level bug or performance fixes, install BEFORE PA
+... is a smoothed mesh or cosmetic replacer, install AFTER
+... has an available patch, install BEFORE PA, and the patch AFTER
+... is a texture replacer, can be installed at any time, but may need to have new atlases generated (see below)
+
+Weapon Sheathing > Morrowind Optimization Patch -> Glow in the Dahrk -> Graphic Herbalism MWSE -> Intelligent Textures/Morrowind Enhanced Textures -> Project Atlas -> any additional cosmetic mesh or texture replacers
+
+Wrye Mash
+Installation
+==============
+
+Archive is set up to use Sub-Packages for Mash Installers:
+
+	00 BATs --- Used to regenerate atlases. Only needed if you use retextures; skip otherwise. 
+	00 Core --- Includes all completed atlas sets
+	01 Textures --- Pregenerated atlases made using vanilla textures, Intelligent Textures, or Morrowind Enhanced Textures (MET). Choose one
+
+	Optional files and patches
+
+	02 Urns - Smoothed --- Smoothed mesh replacer for urns
+	03 Redware - Smoothed --- Smoothed mesh replacer for redware pottery
+	04 Wood Poles - Hi Res Texture --- Texture replacer for wood poles and rope
+	
+	05 Glow in the Dahrk Patch --- Includes patches for all atlas sets
+	06 Glow in the Dahrk - Raven Rock Glass Windows --- Patch for GitD's RR glass windows
+
+	07 Graphic Herbalism Patch --- adds GH support to Bitter Coast mushrooms
+
+Manual
+Installation
+==============
 
 - Install the Core folder by moving the contents into your Morrowind/Data Files folder. For any of these steps, say yes to all if prompted to overwrite
-- If you use any texture replacers other than Intelligent Textures, move the contents of the BATs folder into Data Files/Textures, and follow the instructions for patching texture mods later on
-- Install one of the two textures folders, based on your preferred resolution
-- if you use GitD, install the GitD patch. 
+- If you use any texture replacers other than Intelligent Textures/MET, move the Textures folder inside BATs folder into Data Files, and follow the instructions for patching texture mods later on
+- Install one of the three textures folders, based on your preferred resolution/mod
+- Install the optional folders and included patches, if necessary
 
-
+Texture 
 Patching
+==============
 
-AtlAd (as well as Project Atlas) are not compatible with any mod which replaces their included meshes, or any mod which replaces certain vanilla textures. 
-Texture replacers can be patched by:
-- Installing [Image Magick](https://www.imagemagick.org/script/download.php). During install, select options "Install legacy utilities (e. g. convert)" and "Add application directory to system path"
-- Open your Data Files/Textures folder, and find the included BAT files. They should sort fairly high on the list alphabetically. Double click on the file to run it, and the program will patch automatically.
-- (optional) Check in the Textures/ATL folder to give the new texture a look. If the image is an odd size (any dimensions not a power of two) then your atlas generated incorrectly. This would be caused either by an overly sensitive BAT file, or by texture replacers which are not vanilla dimensions. Report an issue with the BAT and mention the names of any applicable texture replacers you use and I can give it a look.
+Project Atlas makes use of the program Image Magick to generate atlases, using the included BAT files. 
 
-Mesh replacers must be manually patched. If you have any mesh replacers you prefer the look of, install after AtlAd and allow overwrite. The only conflict will be loss of a potential performance gain, so this is generally no problem. 
+- Install [Image Magick](https://www.imagemagick.org/script/download.php). During install, select options "Install legacy utilities (e. g. convert)" and "Add application directory to system path"
+- Open your Data Files/Textures folder, and find the included BAT files. They should sort fairly high on the list alphabetically. Individual BAT files can be run directly by double clicking on them, or the included Atlas Handler (__atlas_handler.bat) can run all or multiple files at once.
 
-Compatability
+Some important notes:
+- Vanilla textures must be present as loose files. Intelligent Textures or other vanilla-based texture mods will work
+- If the new textures are different proportions than vanilla, the atlas may be generated incorrectly. If the image is an odd size (resolutions not a power of two) or has large white/blank spaces then your installed mods may be incompatible.
+- If you get white meshes ingame or want to scale down a texture for any other reason then open the applicable BAT file with a text editor and follow the instructions at the top.
 
-Mesh replacers are generally not compatible with AtlAd, unless the two have no overlap (not unlikely), or there is an available patch.
+======= Team Members =======
+FloorBelow
+Greatness7
+Lord Berandas
+Melchior Dahrk
+MwGek
+Petethegoat
+Pop000100
+R-Zero
+Remiros
+revenorror
+RubberMan
+Sataniel
+Stuporstar
+vtastek
+Wollibeebee
 
-[Project Atlas](https://www.nexusmods.com/morrowind/mods/45399) - AtlAd is an expansion, not a full replacement to PA, and they should be used together. AtlAd replaces four textures/BATs from PA (atlas_woodpoles.dds, tx_redoran_atlas.dds, tx_redwall_atlas.dds, and atlas_velothi.dds) and should therefore win any overwrite conflicts with both PA and Intelligent Textures to make sure AtlAd's meshes appear correctly.  
-PA's optional smoothed meshes are not compatible. Install these individual options after AtlAd.  
-PA's included wood pole texture replacer may not be compatible depending on your setup. Check your results in the Textures/ATL folder after you patch your texture atlases and see if it was improperly generated.  
-AtlAd replaces most, but not all PA meshes. Patches made for PA will always work for AtlAd, however.  
-[Morrowind Optimization Patch](https://www.nexusmods.com/morrowind/mods/45384) - fully compatible. AtlAd carries over all MOP changes.  
-[Graphic Herbalism](https://www.nexusmods.com/morrowind/mods/46599) - Fully compatible. Grab the patch from the "GH Patches and Replacers" file.  
-[Glowing Bitter Coast](http://mw.modhistory.com/download-44-14321) - Compatible. Install the Glowing Bitter Coast - Atlas patch from GH's page above. An adjusted patch will be made in the future.  
-[Glowing Flames](https://www.nexusmods.com/morrowind/mods/46124) - Minor visual conflict. Install after AtlAd. Patch will be made in the future.  
-[Parasol Particles](https://www.nexusmods.com/morrowind/mods/47755) - Install the patch hosted [>here<](https://www.nexusmods.com/morrowind/mods/48923)  
-[Mushroom Tree Replacer](https://www.nexusmods.com/morrowind/mods/45350) by PeterBitt - Includes its own atlased meshes. Install after AtlAd and allow overwrite.  
-[Telvanni Bump Maps](https://www.nexusmods.com/morrowind/mods/42431)/[Vivec Bump Maps](https://www.nexusmods.com/morrowind/mods/40199) - Incompatible. Install after AtlAd and allow overwrite if you want the full features of the mod. If you're fine with only the new textures, install only that folder and regenerate atlases. 
-[Weapon Sheathing](https://www.nexusmods.com/morrowind/mods/46069) - Compatible. Patch included in main archive. 
+======= Changelog =======
+Version 0.7.0
+	Merged AtlAd into Project Atlas
+	Added Azura's Coast trees
+	Added Ashlands trees
+	Added barnacles
+	Added Bloodmoon - cave door
+	Added Septims and Dwemer coins
+	Added Raven Rock buildings
+	Added Daedric statues - Azura, Sheogorath, Boethiah, Malacath, Molag Bal and Mehrunes Dagon
+	Added Kelp
+	Added Limeware
+	Added Unique weapons - The Mace of Molag Bal
+	Added Shacks
+	Added Docks
+	Added Silt Striders - alive and dead
+	Added Skeletons
+	Added Silverware
+	Added Dunmer furniture
+	Added Doors - Hlaalu and Velothi
+	Added Statues - St. Olms and Delyn
+	Updated Wood poles
+	Updated Bitter Coast mushrooms
+	Updated Ebonheart dragon statue
+	Updated Hlaalu buildings
+	Updated Redoran buildings
+	Updated Imperial buildings
+	Updated Common buildings
+	Updated Velothi buildings
+	Updated Redware pots
+	Updated Emperor Parasol trees
+	Updated Dunmer urns
+Version 0.6.5
+	Copied required textures to "BC Mushrooms - Smoothed - Glowing Bitter Coast Patch" folder
+Version 0.6.4
+	Updated GitD patch for Interior Sunrays
+Version 0.6.3
+	Added batch file for dragon statue
+Version 0.6.2
+	Updated Imperial and Hlaalu sets
+	Added GitD patches for Common & Nordic, Hlaalu, and Redoran
+Version 0.6.1
+	Revised installation instructions
+Version 0.6.0
+	Combined packages
+Version 0.5.2
+	fixed collision on ex_de_railing_03.nif & ex_de_railing_06.nif in ATL Wood Poles
+Version 0.5.1
+	Updated GITD patch for ATL Velothi to include the Velothi window
+	fixed atlas generator in ATL Redware
+Version 0.5.0
+	Added ATL Redware
+	Added smoothed option to ATL Urns
+	Added smoothed option to ATL BC Mushrooms
+Version 0.4.3
+	Added GitD patch to ATL Imperial
+Version 0.4.2
+	Patches broken UV in ATL Imperial and added Fort Darius Mesh.
+Version 0.4.1
+	Added texture patcher to ATL Urns.
+Version 0.4
+	Added ATL Imperial
+Version 0.3.1
+	Fixed ATL Velothi - velothi entrance UV
+Version 0.3.0
+	Added Urns by Remiros
+Version 0.2.3
+	Updated texture replacer patcher for Wood Poles and BC Mushrooms
+Version 0.2.2
+	Clarified texture replacer patcher on Hlaalu and Velothi
+	Added texture replacer patcher for BC Mushrooms
+Version 0.2.1
+	Patched collision meshes in ATL Wood Poles
+Version 0.2.0
+	Added Redoran set by Remiros
+Version 0.1.0
+	Initial release
