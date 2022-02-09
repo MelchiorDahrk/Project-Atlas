@@ -11,20 +11,20 @@ IF /I %resizeLevel% GEQ 1 (
 )
 
 if not exist ATL mkdir ATL
-for /f %%i in ('magick convert tx_wall_stuccostone_01.dds -format %%w info:') do set resolutionW=%%i
+for /f %%i in ('magick convert tx_wall_stuccostone_01.* -format %%w info:') do set resolutionW=%%i
 
 set /A resolutionW=%resolutionW%/%resize%
 
 set /A resolutionT=%resolutionW%*3
 
-magick convert tx_brickedge_left_01.dds tx_brickedge_right_01.dds -resize x%resolutionW% +append -rotate "90" ATL/temp1.bmp
-magick convert tx_roofedge_01.dds -rotate "90" ATL/temp2.bmp
-magick convert tx_thatch_01.dds -rotate "90" ATL/temp3.bmp
-magick convert tx_wall_stuccostone_el_01.dds tx_wall_stuccostone_e_02.dds tx_wall_stuccostone_er_01.dds -resize x%resolutionW% +append -rotate "90" ATL/temp4.bmp
-magick convert tx_window_diamond_01.dds tx_window_diamond_01.dds -append -rotate "270" ATL/temp5.bmp
-magick convert tx_metal_strip_01.dds tx_metal_strip_01.dds +append ATL/temp6.bmp
+magick convert tx_brickedge_left_01.* tx_brickedge_right_01.* -resize x%resolutionW% +append -rotate "90" ATL/temp1.bmp
+magick convert tx_roofedge_01.* -rotate "90" ATL/temp2.bmp
+magick convert tx_thatch_01.* -rotate "90" ATL/temp3.bmp
+magick convert tx_wall_stuccostone_el_01.* tx_wall_stuccostone_e_02.* tx_wall_stuccostone_er_01.* -resize x%resolutionW% +append -rotate "90" ATL/temp4.bmp
+magick convert tx_window_diamond_01.* tx_window_diamond_01.* -append -rotate "270" ATL/temp5.bmp
+magick convert tx_metal_strip_01.* tx_metal_strip_01.* +append ATL/temp6.bmp
 
-magick convert tx_stucco_imp_02.dds tx_stucco_imp_01.dds tx_wall_brick_imp_01.dds ATL/temp1.bmp tx_shingles_01.dds ATL/temp2.bmp tx_rooftop_01.dds ATL/temp3.bmp tx_wall_stuccostone_01.dds ATL/temp4.bmp tx_wall_stone_02.dds ATL/temp5.bmp ATL/temp6.bmp ATL/temp6.bmp -resize %resolutionW% -append -define dds:compression=dxt1 ATL/tx_nordcommon_atlas.dds
+magick convert tx_stucco_imp_02.* tx_stucco_imp_01.* tx_wall_brick_imp_01.* ATL/temp1.bmp tx_shingles_01.* ATL/temp2.bmp tx_rooftop_01.* ATL/temp3.bmp tx_wall_stuccostone_01.* ATL/temp4.bmp tx_wall_stone_02.* ATL/temp5.bmp ATL/temp6.bmp ATL/temp6.bmp -resize %resolutionW% -append -define dds:compression=dxt1 ATL/tx_nordcommon_atlas.dds
 
 cd ATL
 del "temp1.bmp"

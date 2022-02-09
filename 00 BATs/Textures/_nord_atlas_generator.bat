@@ -11,17 +11,17 @@ IF /I %resizeLevel% GEQ 1 (
 )
 
 if not exist ATL mkdir ATL
-for /f %%i in ('magick convert tx_wall_stuccostone_01.dds -format %%w info:') do set resolutionW=%%i
+for /f %%i in ('magick convert tx_wall_stuccostone_01.* -format %%w info:') do set resolutionW=%%i
 
 set /A resolutionW=%resolutionW%/%resize%
 
 set /A resolutionT=%resolutionW%*3
 
-magick convert tx_wall_stuccostone_el_01.dds tx_wall_stuccostone_e_02.dds tx_wall_stuccostone_er_01.dds -resize x%resolutionW% +append -rotate "90" ATL/temp1.bmp
-magick convert "tx_stone _right_01.dds" "tx_stone _mid_01.dds" "tx_stone _left_01.dds" -resize x%resolutionW% +append -rotate "90" ATL/temp2.bmp
+magick convert tx_wall_stuccostone_el_01.* tx_wall_stuccostone_e_02.* tx_wall_stuccostone_er_01.* -resize x%resolutionW% +append -rotate "90" ATL/temp1.bmp
+magick convert "tx_stone _right_01.*" "tx_stone _mid_01.*" "tx_stone _left_01.*" -resize x%resolutionW% +append -rotate "90" ATL/temp2.bmp
 
-magick convert tx_wall_stuccostone_01.dds ATL/temp1.bmp tx_wall_stone_01.dds ATL/temp2.bmp -resize %resolutionW% -append -gravity north -background black -extent x%resolutionT% ATL/temp3.bmp
-magick convert tx_thatch_01.dds -rotate "180" ATL/temp4.bmp
+magick convert tx_wall_stuccostone_01.* ATL/temp1.bmp tx_wall_stone_01.* ATL/temp2.bmp -resize %resolutionW% -append -gravity north -background black -extent x%resolutionT% ATL/temp3.bmp
+magick convert tx_thatch_01.* -rotate "180" ATL/temp4.bmp
 
 magick convert ATL/temp3.bmp ATL/temp4.bmp -resize %resolutionW% -append -define dds:compression=dxt1 ATL/tx_nord_atlas.dds
 

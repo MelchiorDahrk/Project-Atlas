@@ -20,6 +20,7 @@ cls
 @echo 30 - Ship Atlas                31 - Silt Strider Atlas       32 - Silverware Atlas
 @echo 33 - Sixth House Atlas         34 - Skeleton Atlas           35 - Urn Atlas
 @echo 36 - Velothi Tileset Atlas     37 - Wood Docks Atlas         38 - Woodpoles Atlas
+@echo 39 - Large Basket Atlas
 @echo                                98 - Run All                  99 - Exit
 set /p _input="What Patcher To Run? [0 - 38] " || set _input=0
 set /a _inputeval="%_input%"*1
@@ -182,6 +183,10 @@ if %_inputEval% EQU 38 (
 @echo Generating woodpoles atlas.
 call "_woodpoles_atlas_generator.bat"
 )
+if %_inputEval% EQU 39 (
+@echo Generating large basket atlas.
+call "_furn_basket_atlas_generator.bat"
+)
 if %_inputEval% EQU 98 (
     @echo Starting to build all atlases.
     if exist "_ashtree_atlas_generator.bat" (
@@ -323,6 +328,10 @@ if %_inputEval% EQU 98 (
     if exist "_woodpoles_atlas_generator.bat" (
         @echo Generating wood poles tileset atlas.
         call "_woodpoles_atlas_generator.bat"
+    )
+    if exist "_furn_basket_atlas_generator.bat" (
+        @echo Generating large basket tileset atlas.
+        call "_furn_basket_atlas_generator.bat"
     )
     pause
 )

@@ -11,13 +11,13 @@ IF /I %resizeLevel% GEQ 1 (
 )
 
 if not exist ATL mkdir ATL
-for /f %%i in ('magick convert tx_emperor_parasol_01.dds -format %%w info:') do set resolutionW=%%i
+for /f %%i in ('magick convert tx_emperor_parasol_01.* -format %%w info:') do set resolutionW=%%i
 set /A resolutionW=%resolutionW%/%resize%
 
-magick convert tx_emperor_parasol_02.dds tx_emperor_parasol_02.dds +append ATL/temp1.bmp
-magick convert tx_emperor_parasol_03.dds tx_emperor_parasol_03.dds tx_emperor_parasol_03.dds tx_emperor_parasol_03.dds +append ATL/temp2.bmp
+magick convert tx_emperor_parasol_02.* tx_emperor_parasol_02.* +append ATL/temp1.bmp
+magick convert tx_emperor_parasol_03.* tx_emperor_parasol_03.* tx_emperor_parasol_03.* tx_emperor_parasol_03.* +append ATL/temp2.bmp
 
-magick convert tx_emperor_parasol_01.dds ATL/temp1.bmp ATL/temp2.bmp ATL/temp2.bmp -resize %resolutionW% -append -define dds:compression=dxt1 ATL/tx_parasol_atlas.dds
+magick convert tx_emperor_parasol_01.* ATL/temp1.bmp ATL/temp2.bmp ATL/temp2.bmp -resize %resolutionW% -append -define dds:compression=dxt1 ATL/tx_parasol_atlas.dds
 
 cd ATL
 del "temp1.bmp"
