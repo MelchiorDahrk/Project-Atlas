@@ -1,7 +1,7 @@
 # Project Atlas
 
 Project Atlas
-Version: 0.7.0
+Version: 0.7.1
 
 ======= About Project Atlas  =======
 Vanilla Morrowind has objects split into different shapes each using its own unique texture. This is bad for performance and is one of the game's primary FPS bottlenecks. Each shape (even within a single mesh file) requires its own drawcall. There are close to 5,000 different textures in Morrowind's data; many of which are very similar or outright identical and some meshes are split into more than 75 different shapes. Merging those meshes into a single shape which references a single texture atlas is the ideal situation for game performance.
@@ -20,7 +20,7 @@ If the mod is ONLY for mesh-level bug or performance fixes, install BEFORE PA
 ... has an available patch, install BEFORE PA, and the patch AFTER
 ... is a texture replacer, can be installed at any time, but may need to have new atlases generated (see below)
 
-Weapon Sheathing > Morrowind Optimization Patch -> Glow in the Dahrk -> Graphic Herbalism MWSE -> Intelligent Textures/Morrowind Enhanced Textures -> Project Atlas -> any additional cosmetic mesh or texture replacers
+Weapon Sheathing -> Morrowind Optimization Patch -> Glow in the Dahrk -> Graphic Herbalism MWSE -> Intelligent Textures/Morrowind Enhanced Textures -> Project Atlas -> any additional cosmetic mesh or texture replacers
 
 Wrye Mash
 Installation
@@ -30,7 +30,7 @@ Archive is set up to use Sub-Packages for Mash Installers:
 
 	00 BATs --- Used to regenerate atlases. Only needed if you use retextures; skip otherwise. 
 	00 Core --- Includes all completed atlas sets
-	01 Textures --- Pregenerated atlases made using vanilla textures, Intelligent Textures, or Morrowind Enhanced Textures (MET). Choose one
+	01 Textures --- Pregenerated atlases made using vanilla textures, Intelligent Textures, or Morrowind Enhanced Textures (MET). Only one is needed.
 
 	Optional files and patches
 
@@ -84,6 +84,14 @@ vtastek
 Wollibeebee
 
 ======= Changelog =======
+Version 0.7.1
+	Added Large basket 
+	Updated Velothi atlas - split into two separate atlases for Velothi houses and Vivec-specific textures. 
+	Updated Kelp atlas
+	Added patch for Morrowind Enhanced Textures
+	Remade vanilla textures with the Uncompressed Textures Resource
+	Moved smoothed Emperor Parasols from the main archive to a separate folder. Remade the ones in the main mod from vanilla.
+	Remade a few problematic IT 4.0 atlases with IT 3.0 textures
 Version 0.7.0
 	Merged AtlAd into Project Atlas
 	Added Azura's Coast trees
