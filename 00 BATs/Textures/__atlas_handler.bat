@@ -21,6 +21,8 @@ cls
 @echo 33 - Sixth House Atlas         34 - Skeleton Atlas           35 - Urn Atlas
 @echo 36 - Velothi Tileset Atlas     37 - Wood Docks Atlas         38 - Woodpoles Atlas
 @echo 39 - Large Basket Atlas
+@echo 40 - Ebony Mail Atlas          41 - Helm of Oreyn Bearclaw   42 - Boots of the Apostle
+@echo 43 - Redoran Watchman Helm
 @echo                                98 - Run All                  99 - Exit
 set /p _input="What Patcher To Run? [0 - 38] " || set _input=0
 set /a _inputeval="%_input%"*1
@@ -187,6 +189,22 @@ if %_inputEval% EQU 39 (
 @echo Generating large basket atlas.
 call "_furn_basket_atlas_generator.bat"
 )
+if %_inputEval% EQU 40 (
+@echo Generating Ebony Mail atlas.
+call "_a_cuirass_ebon_atlas_generator.bat"
+)
+if %_inputEval% EQU 41 (
+@echo Generating Helm of Oreyn Bearclaw atlas.
+call "_a_helm_bearclaw_atlas_generator.bat"
+)
+if %_inputEval% EQU 42 (
+@echo Generating Boots of the Apostle atlas.
+call "_a_boots_apostle_atlas_generator.bat"
+)
+if %_inputEval% EQU 43 (
+@echo Generating Redoran Watchman Helm atlas.
+call "_a_helm_red_watch_atlas_generator.bat"
+)
 if %_inputEval% EQU 98 (
     @echo Starting to build all atlases.
     if exist "_ashtree_atlas_generator.bat" (
@@ -206,7 +224,7 @@ if %_inputEval% EQU 98 (
         call "_bm_cavedoor_atlas_generator.bat"
     )
     if exist "_colony_atlas_generator.bat" (
-        @echo Generating Bloodmoon colony tileset atlas.
+        @echo Generating Bloodmoon colony tileset atlas. This will take a while...
         call "_colony_atlas_generator.bat"
     )
     if exist "_coins_atlas_generator.bat" (
@@ -326,12 +344,28 @@ if %_inputEval% EQU 98 (
         call "_wood_docks_generator.bat"
     )
     if exist "_woodpoles_atlas_generator.bat" (
-        @echo Generating wood poles tileset atlas.
+        @echo Generating wood poles atlas.
         call "_woodpoles_atlas_generator.bat"
     )
     if exist "_furn_basket_atlas_generator.bat" (
-        @echo Generating large basket tileset atlas.
+        @echo Generating large basket atlas.
         call "_furn_basket_atlas_generator.bat"
+    )
+    if exist "_a_cuirass_ebon_atlas_generator.bat" (
+        @echo Generating Ebony Mail atlas.
+        call "_a_cuirass_ebon_atlas_generator.bat"
+    )
+    if exist "_a_helm_bearclaw_atlas_generator.bat" (
+        @echo Generating Helm of Oreyn Bearclaw atlas.
+        call "_a_helm_bearclaw_atlas_generator.bat"
+    )
+    if exist "_a_boots_apostle_atlas_generator.bat" (
+        @echo Generating Boots of the Apostle atlas.
+        call "_a_boots_apostle_atlas_generator.bat"
+    )
+    if exist "_a_helm_red_watch_atlas_generator.bat" (
+        @echo Generating Redoran Watchman Helm atlas.
+        call "_a_helm_red_watch_atlas_generator.bat"
     )
     pause
 )
