@@ -41,7 +41,9 @@ Archive is set up to use Sub-Packages for Mash Installers:
 	
 	06 Glow in the Dahrk Patch --- Includes patches for all atlas sets
 
-	07 Graphic Herbalism Patch --- adds GH support to Bitter Coast mushrooms
+	07 Graphic Herbalism Patch --- adds GH support to atlased harvestable plants
+
+	08 ILFAS (Improved Lights for All Shaders) Patch --- Carries forward normal/material edits
 
 Manual
 Installation

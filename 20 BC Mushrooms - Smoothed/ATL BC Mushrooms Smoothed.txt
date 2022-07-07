@@ -1,0 +1,37 @@
+Project Atlas: Bitter Coast Mushrooms Smoothed (optional version)
+Version 1.1
+
+Description
+Replaces the meshes in the "BC Mushrooms" set with new smoothed atlases versions to improve performance, while being more compatible with HD texture replacers than the vanilla atlased mushrooms.
+These use their own textures rather than the base atlas version. The corprinus/russula and shelf fungus have been separated into two textures to make it possible to use high-definition atlased texture replacers.
+The ingredients have also been resized slightly smaller but sit at the same z-height as the originals.
+
+Installation
+Use mod manager (recommended) and choose "00 Core - Smoothed Meshes" or manually copy "meshes" and "textures" folders to your Data Files directory from "00 Core - Smoothed Meshes".
+If you use the "Glowing Bitter Coast" mod install also a corresponding patch.
+If you use a mushroom texture replacer, you can use the "bc_mushroom_only_atlas_generator.bat" and "bc_fungus_atlas_generator.bat" to patch the texture atlas with your replacer.
+You will need to have Image Magick (https://www.imagemagick.org/script/download.php) installed [during the installation process, select options "Install legacy utilities (e. g. convert)" and "Add application directory to system path"]. Then move the .bat file into your "Textures" folder and run it.
+Be warned that it requires all textures to be present as loose files and requires them to have the same relative proportions as vanilla. If they're not the same aspect ratio, they must be resized first.
+The resulting atlases should have 1:4 (Width:Height) proportions each. If the atlas proportion are correct and yet you get white meshes ingame or want to scale down a texture for any other reason then open the patcher with notepad and follow the instructions at the top.
+
+Textures used in tx_bc_mushroom_atl_01.dds
+tx_bc_mushroom_04.dds (1:1)
+tx_bc_mushroom_01.dds (1:1)
+tx_bc_mushroom_02.dds (4:1)
+tx_bc_mushroom_03.dds (1:1)
+
+Textures used in tx_bc_fungus_atlas.dds
+tx_bc_fungusbottom_01.dds (1:1)
+tx_bc_fungustop_01.dds (1:1)
+tx_bc_fungustop_02.dds (1:1)
+tx_bc_fungusbotltom_02.dds (1:1)
+
+Contributor
+Stuporstar (using Remiros' atlased Mushrooms as a base)
+
+Credits
+Melchior Dahrk - ReadME Base
+
+Changelog
+1.0 - Initial release
+1.1 - Fixed texture replacer patchers for smoothed version and added resizer to them.
