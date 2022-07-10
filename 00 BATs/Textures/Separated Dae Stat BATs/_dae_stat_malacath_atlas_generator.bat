@@ -1,16 +1,16 @@
 @echo off
 if not exist ATL mkdir ATL
-for /f %%i in ('magick convert tx_daed_azura_face.* -format %%w info:') do set resolutionW=%%i
+for /f %%i in ('magick convert tx_daed_azura_face.dds -format %%w info:') do set resolutionW=%%i
 
-magick convert tx_daed_malacath_hair.* tx_daed_malacath_hand.* -gravity southeast -composite -append ATL/mala00.bmp
-magick convert tx_daed_malacath_skirtback.* tx_daed_malacath_skirtfront.* +append ATL/mala1.bmp
-magick convert tx_daed_malacath_feet.* ATL/mala00.bmp -append ATL/mala2.bmp
-magick convert tx_daed_malacath_upper_leg.* tx_daed_malacath_lower_leg.* -append ATL/mala3.bmp
+magick convert tx_daed_malacath_hair.dds tx_daed_malacath_hand.dds -gravity southeast -composite -append ATL/mala00.bmp
+magick convert tx_daed_malacath_skirtback.dds tx_daed_malacath_skirtfront.dds +append ATL/mala1.bmp
+magick convert tx_daed_malacath_feet.dds ATL/mala00.bmp -append ATL/mala2.bmp
+magick convert tx_daed_malacath_upper_leg.dds tx_daed_malacath_lower_leg.dds -append ATL/mala3.bmp
 magick convert ATL/mala1.bmp ATL/mala2.bmp ATL/mala3.bmp +append ATL/mala5.bmp
-magick convert tx_daed_malacath_fronttorso.* tx_daed_malacath_backtorso.* -resize %resolutionW% -append ATL/mala6.bmp
-magick convert ATL/mala6.bmp tx_daed_malacath_belt_center_piece.* -gravity southwest -composite -append ATL/mala7.bmp
-magick convert ATL/mala7.bmp tx_daed_malacath_ear.* -gravity southeast -composite -append ATL/mala8.bmp
-magick convert tx_daed_malacath_face.* tx_daed_malacath_sword.* -append ATL/mala9.bmp
+magick convert tx_daed_malacath_fronttorso.dds tx_daed_malacath_backtorso.dds -resize %resolutionW% -append ATL/mala6.bmp
+magick convert ATL/mala6.bmp tx_daed_malacath_belt_center_piece.dds -gravity southwest -composite -append ATL/mala7.bmp
+magick convert ATL/mala7.bmp tx_daed_malacath_ear.dds -gravity southeast -composite -append ATL/mala8.bmp
+magick convert tx_daed_malacath_face.dds tx_daed_malacath_sword.dds -append ATL/mala9.bmp
 magick convert ATL/mala8.bmp ATL/mala9.bmp +append ATL/mala10.bmp
 
 magick convert ATL/mala5.bmp ATL/mala10.bmp -append -define dds:compression=dxt1 ATL/atlad_dae_stat_mala.dds

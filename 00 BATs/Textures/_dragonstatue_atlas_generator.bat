@@ -11,19 +11,19 @@ IF /I %resizeLevel% GEQ 1 (
 )
 
 if not exist ATL mkdir ATL
-for /f %%i in ('magick convert tx_dragonstatue_head.* -format %%w info:') do set resolutionW=%%i
+for /f %%i in ('magick convert tx_dragonstatue_head.dds -format %%w info:') do set resolutionW=%%i
 set /A resolutionW=%resolutionW%/%resize%
 
 set /A resolutionE=%resolutionW%/2
 
-magick convert tx_dragonstatue_eye.* -gravity Northwest -background black -extent %resolutionE%x%resolutionE% ATL/temp1.bmp
-magick convert tx_dragonstatue_body.* ATL/temp1.bmp -resize %resolutionE% -append ATL/temp2.bmp
-magick convert tx_dragonstatue_foot.* ATL/temp2.bmp -resize x%resolutionW% +append ATL/temp3.bmp
-magick convert tx_dragonstatue_metal_1.* tx_dragonstatue_metal_1.* -resize x%resolutionE% +append ATL/temp4.bmp
-magick convert tx_dragonstatue_metal2.* tx_dragonstatue_metal2.* -resize x%resolutionE% +append ATL/temp5.bmp
-magick convert tx_dragonstatue_metal3.* tx_marble_black.* -resize x%resolutionE% +append ATL/temp6.bmp
+magick convert tx_dragonstatue_eye.dds -gravity Northwest -background black -extent %resolutionE%x%resolutionE% ATL/temp1.bmp
+magick convert tx_dragonstatue_body.dds ATL/temp1.bmp -resize %resolutionE% -append ATL/temp2.bmp
+magick convert tx_dragonstatue_foot.dds ATL/temp2.bmp -resize x%resolutionW% +append ATL/temp3.bmp
+magick convert tx_dragonstatue_metal_1.dds tx_dragonstatue_metal_1.dds -resize x%resolutionE% +append ATL/temp4.bmp
+magick convert tx_dragonstatue_metal2.dds tx_dragonstatue_metal2.dds -resize x%resolutionE% +append ATL/temp5.bmp
+magick convert tx_dragonstatue_metal3.dds tx_marble_black.dds -resize x%resolutionE% +append ATL/temp6.bmp
 
-magick convert ATL/temp3.bmp tx_dragonstatue_head.* tx_dragonstatue_leg.* ATL/temp4.bmp ATL/temp5.bmp ATL/temp6.bmp tx_dragonstatue_wing.* -resize %resolutionW% -append -gravity north -background black -extent x%resolutionH% -define dds:compression=dxt1 ATL/tx_drag_stat_atlas.dds
+magick convert ATL/temp3.bmp tx_dragonstatue_head.dds tx_dragonstatue_leg.dds ATL/temp4.bmp ATL/temp5.bmp ATL/temp6.bmp tx_dragonstatue_wing.dds -resize %resolutionW% -append -gravity north -background black -extent x%resolutionH% -define dds:compression=dxt1 ATL/tx_drag_stat_atlas.dds
 
 cd ATL
 del "temp1.bmp"

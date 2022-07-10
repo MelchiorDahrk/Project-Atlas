@@ -11,12 +11,12 @@ IF /I %resizeLevel% GEQ 1 (
 )
 
 if not exist ATL mkdir ATL
-for /f %%i in ('magick convert tx_bc_mushroom_01.* -format %%w info:') do set resolutionW=%%i
+for /f %%i in ('magick convert tx_bc_mushroom_01.dds -format %%w info:') do set resolutionW=%%i
 set /A resolutionW=%resolutionW%/%resize%
 
-magick convert tx_bc_mushroom_03.* tx_bc_mushroom_03.* +append ATL/temp1.bmp
+magick convert tx_bc_mushroom_03.dds tx_bc_mushroom_03.dds +append ATL/temp1.bmp
 
-magick convert tx_bc_fungusbottom_01.* tx_bc_fungustop_01.* tx_bc_fungustop_02.* tx_bc_fungusbottom_02.* tx_bc_mushroom_04.* tx_bc_mushroom_01.* tx_bc_mushroom_02.* tx_bc_mushroom_02.* ATL/temp1.bmp ATL/temp1.bmp ATL/temp1.bmp -resize %resolutionW% -append -define dds:compression=dxt1 ATL/tx_bc_mushroom_atlas.dds
+magick convert tx_bc_fungusbottom_01.dds tx_bc_fungustop_01.dds tx_bc_fungustop_02.dds tx_bc_fungusbottom_02.dds tx_bc_mushroom_04.dds tx_bc_mushroom_01.dds tx_bc_mushroom_02.dds tx_bc_mushroom_02.dds ATL/temp1.bmp ATL/temp1.bmp ATL/temp1.bmp -resize %resolutionW% -append -define dds:compression=dxt1 ATL/tx_bc_mushroom_atlas.dds
 
 cd ATL
 del "temp1.bmp"
