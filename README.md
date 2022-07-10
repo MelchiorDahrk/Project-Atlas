@@ -28,7 +28,7 @@ Installation
 
 Archive is set up to use Sub-Packages for Mash Installers:
 
-	00 BATs --- Used to regenerate atlases. Only needed if you use retextures; skip otherwise. 
+	00 BATs --- Used to regenerate atlases. Only needed if you use retextures other than IT or MET; skip otherwise. 
 	00 Core --- Includes all completed atlas sets
 	01 Textures --- Pregenerated atlases made using vanilla textures, Intelligent Textures, or Morrowind Enhanced Textures (MET). Only one is needed.
 
