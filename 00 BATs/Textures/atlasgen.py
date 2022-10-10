@@ -1,6 +1,43 @@
 #!/usr/bin/env python3
+# This is free and unencumbered public domain software. For more
+# information see http://unlicense.org/ or the accompanying LICENSE file.
 
-# Requires python 3.7 or newer
+"""
+Project Atlas generator helper
+
+Requires python 3.7 or newer
+
+Uses a .atlas template file to produce a texture atlas.
+
+The template file consists of a list of imagemagick convert commands
+(not including the "magick convert" part), and a ratio that indicates
+the width the texture is expected to be,  relative to the overall width of the atlas.
+
+E.g.
+```
+# Files can also include comments
+[ratios]
+texture1.dds = 1
+texture2.dds = 1/2
+texture3.dds = 1/2
+
+[commands]
+texture2.dds texture3.dds +append mpr:temp
+texture1.dds mpr:temp -append eg_atlas.dds
+```
+
+Performs the following:
+- Resizes textures to the correct size relative to the atlas size.
+- Detects the size of the atlas based on the median size of the input textures
+  (after adjusting for the ratios)
+- Allows the atlas width to be referenced in commands using expressions such as {3*width/2}
+  (only fractions and multiplication are supported).
+- Defines dds compression options for output dds files.
+- Combines the commands into a single magick command, allowing the use of in-memory mpr labels
+  See https://imagemagick.org/Usage/files/#mpr
+- Creates parent directories for output files if they don't exist already.
+- Removes temporary .bmp files
+"""
 
 import argparse
 import os
