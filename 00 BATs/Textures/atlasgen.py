@@ -7,6 +7,7 @@ import os
 import sys
 import re
 import operator
+from statistics import median_high
 from functools import reduce
 from fractions import Fraction
 from subprocess import check_call, check_output
@@ -37,16 +38,19 @@ def generate_atlas(atlas_file: str, base_width_override: Optional[int]):
 
     assert ratios, "There must be at least one texture file as input to the atlas"
     assert commands, "There must be at least one command to generate the atlas"
-    # Determine Atlas Size from ratios
-    # TODO: Perhaps using the median of the sizes for all textures?
-    base_size_file = list(ratios)[0]
-    base_ratio = ratios[base_size_file]
-    output = check_output(
-        ["magick", "convert", base_size_file, "-format", "%w", "info:"],
-        encoding="utf-8",
-        text=True,
-    )
-    base_width = base_width_override or int(int(output) / base_ratio)
+
+    # Determine Atlas base width, using the median texture size after adjusting for the ratios
+    if base_width_override is not None:
+        base_width = base_width_override
+    else:
+        outputs = check_output(
+            ["magick", "convert"] + list(ratios) + ["-format", "%w ", "info:"],
+            encoding="utf-8",
+            text=True,
+        ).split()
+        ratio_values = list(ratios.values())
+        sizes = [int(int(size) / ratio) for size, ratio in zip(outputs, ratio_values)]
+        base_width = median_high(sizes)
 
     # Commands are merged into one magick convert call
     # (requires adding a '-write' before each output)
