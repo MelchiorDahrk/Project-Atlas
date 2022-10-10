@@ -155,7 +155,7 @@ call "_ship_atlas_generator.bat"
 )
 if %_inputEval% EQU 31 (
 @echo Generating silt strider atlas.
-call "_silt_strider_atlas_generator.bat"
+atlasgen.py _silt_strider.atlas
 )
 if %_inputEval% EQU 32 (
 @echo Generating silverware atlas.
