@@ -5,6 +5,9 @@
 import argparse
 import os
 import sys
+import re
+import operator
+from functools import reduce
 from fractions import Fraction
 from subprocess import check_call, check_output
 from typing import Optional
@@ -50,10 +53,24 @@ def generate_atlas(atlas_file: str, base_width_override: Optional[int]):
     # This also allows the use of mpr references between commands
     outputs = []
     combined_commands = []
+
+    def arithmetic_sub(string: str) -> str:
+        """
+        Evaluates arithmetic patterns in the input
+
+        They can include fractions and multiplication
+        E.g. {2*1/2}, {width/2}, {10*width/2}
+        """
+
+        def inner(match):
+            expr = match.group(0).strip("{}")
+            expr = expr.replace("width", str(base_width))
+            return str(reduce(operator.mul, map(Fraction, expr.split("*"))))
+
+        return re.sub(r"{([0-9.]+|\*|width)+?}", inner, string)
+
     for command in commands:
-        # TODO: template arithmetic language for specifying custom sizes
-        # for use with things like -extent
-        # In addition to fractions, it should support multiplication, so you can do things like `3/4 * width`
+        command = arithmetic_sub(command)
         new_command = []
         output = command.split()[-1]
         outputs.append(output)

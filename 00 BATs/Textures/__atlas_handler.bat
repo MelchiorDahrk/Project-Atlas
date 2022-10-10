@@ -71,7 +71,7 @@ call "_furn_de_atlas_generator.bat"
 )
 if %_inputEval% EQU 10 (
 @echo Generating doors atlas.
-call "_doors_atlas_generator.bat"
+atlasgen.py _doors.atlas
 )
 if %_inputEval% EQU 11 (
 @echo Generating dragon statue atlas.
