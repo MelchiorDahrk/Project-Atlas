@@ -199,7 +199,7 @@ call "_a_helm_bearclaw_atlas_generator.bat"
 )
 if %_inputEval% EQU 42 (
 @echo Generating Boots of the Apostle atlas.
-call "_a_boots_apostle_atlas_generator.bat"
+atlasgen.py _a_boots_apostle.atlas
 )
 if %_inputEval% EQU 43 (
 @echo Generating Redoran Watchman Helm atlas.
