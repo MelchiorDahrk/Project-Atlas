@@ -48,10 +48,10 @@ from statistics import median_high
 from functools import reduce
 from fractions import Fraction
 from subprocess import check_call, check_output
-from typing import Optional
+from typing import Tuple, List, Dict, Optional
 
 
-def generate_atlas(atlas_file: str, base_width_override: Optional[int]):
+def read_atlas(atlas_file: str) -> Tuple[Dict[str, Fraction], List[str]]:
     ratios = {}
     commands = []
     with open(atlas_file, encoding="utf-8") as file:
@@ -75,6 +75,11 @@ def generate_atlas(atlas_file: str, base_width_override: Optional[int]):
 
     assert ratios, "There must be at least one texture file as input to the atlas"
     assert commands, "There must be at least one command to generate the atlas"
+    return ratios, commands
+
+
+def generate_atlas(atlas_file: str, base_width_override: Optional[int]):
+    ratios, commands = read_atlas(atlas_file)
 
     # Determine Atlas base width, using the median texture size after adjusting for the ratios
     if base_width_override is not None:
