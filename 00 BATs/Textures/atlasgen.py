@@ -130,10 +130,10 @@ def generate_atlas(atlas_file: str, base_width_override: Optional[int]):
                 new_command.append(word)
         # Set compression for dds outputs
         # so that it doesn't have to be specified in the template
-        if output.endswith(".dds"):
+        if output.lower().endswith(".dds"):
             new_command.extend(["-define", "dds:compreession=dxt1"])
         # Make sure parent directories of the output file exist
-        if not output.startswith("mpr:"):
+        if not output.lower().startswith("mpr:"):
             os.makedirs(os.path.dirname(output), exist_ok=True)
         new_command.append("-write")
         new_command.append(output)
@@ -145,7 +145,7 @@ def generate_atlas(atlas_file: str, base_width_override: Optional[int]):
 
     # Clean up temporary files
     for filename in outputs:
-        if filename.endswith(".bmp"):
+        if filename.lower().endswith(".bmp"):
             os.remove(filename)
 
 
