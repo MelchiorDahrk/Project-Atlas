@@ -71,7 +71,7 @@ call "_furn_de_atlas_generator.bat"
 )
 if %_inputEval% EQU 10 (
 @echo Generating doors atlas.
-call "_doors_atlas_generator.bat"
+python3 atlasgen.py _doors.atlas
 )
 if %_inputEval% EQU 11 (
 @echo Generating dragon statue atlas.
@@ -155,7 +155,7 @@ call "_ship_atlas_generator.bat"
 )
 if %_inputEval% EQU 31 (
 @echo Generating silt strider atlas.
-call "_silt_strider_atlas_generator.bat"
+python3 atlasgen.py _silt_strider.atlas
 )
 if %_inputEval% EQU 32 (
 @echo Generating silverware atlas.
@@ -199,7 +199,7 @@ call "_a_helm_bearclaw_atlas_generator.bat"
 )
 if %_inputEval% EQU 42 (
 @echo Generating Boots of the Apostle atlas.
-call "_a_boots_apostle_atlas_generator.bat"
+python3 atlasgen.py _a_boots_apostle.atlas
 )
 if %_inputEval% EQU 43 (
 @echo Generating Redoran Watchman Helm atlas.
