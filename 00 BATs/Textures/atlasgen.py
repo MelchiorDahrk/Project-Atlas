@@ -10,16 +10,16 @@ Requires python 3.7 or newer
 Uses a .atlas template file to produce a texture atlas.
 
 The template file consists of a list of imagemagick convert commands
-(not including the "magick convert" part), and a ratio that indicates
-the width the texture is expected to be,  relative to the overall width of the atlas.
+(not including the "magick convert" part), and the expected widths
+of the textures.
 
 E.g.
 ```
 # Files can also include comments
-[ratios]
-texture1.dds = 1
-texture2.dds = 1/2
-texture3.dds = 1/2
+[widths]
+texture1.dds = 512
+texture2.dds = 256
+texture3.dds = 256
 
 [commands]
 texture2.dds texture3.dds +append mpr:temp
@@ -29,7 +29,7 @@ texture1.dds mpr:temp -append eg_atlas.dds
 Performs the following:
 - Resizes textures to the correct size relative to the atlas size.
 - Detects the size of the atlas based on the median size of the input textures
-  (after adjusting for the ratios)
+  (after adjusting for the widths)
 - Allows the atlas width to be referenced in commands using expressions such as {3*width/2}
   (only fractions and multiplication are supported).
 - Defines dds compression options for output dds files.
@@ -44,6 +44,7 @@ import os
 import sys
 import re
 import operator
+import shlex
 from statistics import median_high
 from functools import reduce
 from fractions import Fraction
@@ -51,48 +52,53 @@ from subprocess import check_call, check_output
 from typing import Tuple, List, Dict, Optional
 
 
-def read_atlas(atlas_file: str) -> Tuple[Dict[str, Fraction], List[str]]:
-    ratios = {}
+def read_atlas(atlas_file: str) -> Tuple[Dict[str, int], Dict[str, int], List[str]]:
+    widths = {}
+    variables = {}
     commands = []
     with open(atlas_file, encoding="utf-8") as file:
-        section = "ratios"
+        section = None
         for line in file.readlines():
-            # Ignore comments
-            if line.startswith("#"):
+            # Ignore comments and empty lines
+            if line.startswith("#") or not line.strip():
                 continue
-            if line.startswith("[ratios]"):
-                # Just exists for readability
+            if (
+                line.startswith("[variables]")
+                or line.startswith("[widths]")
+                or line.startswith("[commands]")
+            ):
+                section = line.strip().strip("[]")
                 continue
-            if line.startswith("[commands]"):
-                section = "commands"
-                continue
-            if section == "ratios" and "=" in line:
-                texture_file, _, ratio = line.rpartition("=")
-                ratios[texture_file.strip()] = Fraction(ratio.strip())
+            if section == "widths" and "=" in line:
+                texture_file, _, width = line.rpartition("=")
+                widths[texture_file.strip()] = int(width.strip())
+            if section == "variables" and "=" in line:
+                variable_name, _, value = line.rpartition("=")
+                variables[variable_name.strip()] = int(value.strip())
             elif section == "commands":
-                if line.strip():
-                    commands.append(line.strip())
+                commands.append(line.strip())
 
-    assert ratios, "There must be at least one texture file as input to the atlas"
+    assert widths, "There must be at least one texture file as input to the atlas"
     assert commands, "There must be at least one command to generate the atlas"
-    return ratios, commands
+    return widths, variables, commands
 
 
-def generate_atlas(atlas_file: str, base_width_override: Optional[int]):
-    ratios, commands = read_atlas(atlas_file)
+def generate_atlas(atlas_file: str, multiplier: Optional[Fraction] = None):
+    widths, variables, commands = read_atlas(atlas_file)
 
     # Determine Atlas base width, using the median texture size after adjusting for the ratios
-    if base_width_override is not None:
-        base_width = base_width_override
-    else:
+    if multiplier is None:
         outputs = check_output(
-            ["magick", "convert"] + list(ratios) + ["-format", "%w ", "info:"],
+            ["magick", "convert"] + list(widths.keys())+ ["-format", "%w ", "info:"],
             encoding="utf-8",
             text=True,
         ).split()
-        ratio_values = list(ratios.values())
-        sizes = [int(int(size) / ratio) for size, ratio in zip(outputs, ratio_values)]
-        base_width = median_high(sizes)
+        expected_values = list(widths.values())
+        multipliers = [
+            int(int(width) / expected_width)
+            for width, expected_width in zip(outputs, expected_values)
+        ]
+        multiplier = Fraction(median_high(multipliers))
 
     # Commands are merged into one magick convert call
     # (requires adding a '-write' before each output)
@@ -110,27 +116,30 @@ def generate_atlas(atlas_file: str, base_width_override: Optional[int]):
 
         def inner(match):
             expr = match.group(0).strip("{}")
-            expr = expr.replace("width", str(base_width))
+            for key, value in variables.items():
+                if key in expr:
+                    expr = expr.replace(key, str(value * multiplier))
             return str(reduce(operator.mul, map(Fraction, expr.split("*"))))
 
-        return re.sub(r"{([0-9.]+|\*|width)+?}", inner, string)
+        return re.sub(r"{([0-9.]+|\*|[a-zA-Z]+)+?}", inner, string)
 
     for command in commands:
         command = arithmetic_sub(command)
         new_command = []
-        output = command.split()[-1]
+        output = shlex.split(command)[-1]
         outputs.append(output)
-        for word in command.split()[:-1]:
+        for word in shlex.split(command)[:-1]:
             if word.lower().endswith(".dds"):
                 # Each input texture is resized so that textures being larger/smaller
                 # than expected does not break the atlas
-                width = base_width * ratios[word]
+                width = multiplier * widths[word]
                 new_command.extend(["(", word, "-resize", str(width), ")"])
             else:
                 new_command.append(word)
         # Set compression for dds outputs
         # so that it doesn't have to be specified in the template
-        if output.lower().endswith(".dds"):
+        # (can still be overridden by the template)
+        if output.lower().endswith(".dds") and "dds:compression=" not in command:
             new_command.extend(["-define", "dds:compreession=dxt1"])
         # Make sure parent directories of the output file exist
         if not output.lower().startswith("mpr:"):
@@ -153,11 +162,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("atlas_file", help="Atlas template file for processing")
     parser.add_argument(
-        "--width",
-        help="Width of the atlas. If omitted, will be detected from the input textures",
-        type=int,
+        "--multiplier",
+        help="Size multiplier for the atlas. "
+        "If omitted, it will be detected based on the sizes of the input textures",
+        type=Fraction,
         nargs="?",
     )
 
     args = parser.parse_args(sys.argv[1:])
-    generate_atlas(args.atlas_file, args.width)
+    generate_atlas(args.atlas_file, args.multiplier)

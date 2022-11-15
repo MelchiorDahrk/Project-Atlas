@@ -1,0 +1,54 @@
+[widths]
+Tx_imp_botfront_01.dds = 32
+Tx_imp_botside_01.dds = 32
+Tx_imp_ceiling_01.dds = 256
+Tx_imp_ceiling_strip_01.dds = 256
+Tx_imp_ceiling_strip_02.dds = 256
+Tx_imp_colthin_01.dds = 32
+Tx_imp_colthin_02.dds = 32
+Tx_imp_colwide_01.dds = 64
+Tx_imp_floor_01.dds = 256
+Tx_imp_floor_02.dds = 256
+Tx_imp_foursquares_01.dds = 128
+Tx_imp_full_01.dds = 128
+Tx_imp_half_01.dds = 64
+Tx_imp_midfront_01.dds = 32
+Tx_imp_midside_01.dds = 32
+Tx_imp_plain_01.dds = 128
+Tx_imp_step_01.dds = 256
+Tx_imp_step_02.dds = 256
+Tx_imp_step_03.dds = 256
+Tx_imp_step_04.dds = 256
+Tx_imp_step_05.dds = 256
+Tx_imp_step_06.dds = 256
+Tx_imp_stripdark_01.dds = 128
+Tx_imp_stripmed_01.dds = 128
+Tx_imp_topfront_01.dds = 32
+Tx_imp_topside_01.dds = 32
+Tx_imp_wall_01.dds = 256
+Tx_imp_wall_02.dds = 256
+Tx_imp_wall_03.dds = 256
+Tx_imp_walltop_01.dds = 256
+tx_imp_archtop_01.dds = 256
+tx_imp_block_01.dds = 64
+tx_imp_block_02.dds = 64
+tx_imp_block_03.dds = 64
+
+[commands]
+tx_imp_block_01.dds tx_imp_block_02.dds tx_imp_block_03.dds tx_imp_block_03.dds +append ATL/temp1.bmp
+Tx_imp_botfront_01.dds Tx_imp_botfront_01.dds -append ATL/temp2.bmp
+Tx_imp_botside_01.dds Tx_imp_botside_01.dds -append ATL/temp3.bmp
+ATL/temp2.bmp ATL/temp3.bmp +append -rotate "90" ATL/temp4.bmp
+Tx_imp_colthin_01.dds Tx_imp_colthin_02.dds Tx_imp_colwide_01.dds +append -rotate "90" ATL/temp5.bmp
+Tx_imp_foursquares_01.dds Tx_imp_foursquares_01.dds +append ATL/temp6.bmp
+Tx_imp_full_01.dds Tx_imp_full_01.dds +append ATL/temp7.bmp
+Tx_imp_half_01.dds Tx_imp_half_01.dds Tx_imp_half_01.dds Tx_imp_half_01.dds +append ATL/temp8.bmp
+Tx_imp_midfront_01.dds Tx_imp_midside_01.dds +append ATL/temp9.bmp
+ATL/temp9.bmp ATL/temp9.bmp ATL/temp9.bmp ATL/temp9.bmp -append -rotate "90" ATL/temp10.bmp
+Tx_imp_plain_01.dds Tx_imp_plain_01.dds +append ATL/temp11.bmp
+Tx_imp_stripdark_01.dds Tx_imp_stripdark_01.dds +append ATL/temp12.bmp
+Tx_imp_stripmed_01.dds Tx_imp_stripmed_01.dds +append ATL/temp13.bmp
+Tx_imp_topfront_01.dds Tx_imp_topside_01.dds +append ATL/temp14.bmp
+ATL/temp14.bmp ATL/temp14.bmp -append -rotate "90" ATL/temp15.bmp
+tx_imp_archtop_01.dds ATL/temp1.bmp ATL/temp4.bmp Tx_imp_ceiling_01.dds Tx_imp_ceiling_strip_01.dds Tx_imp_ceiling_strip_02.dds  ATL/temp5.bmp Tx_imp_floor_01.dds Tx_imp_floor_02.dds ATL/temp6.bmp ATL/temp7.bmp ATL/temp8.bmp ATL/temp10.bmp ATL/temp11.bmp Tx_imp_step_01.dds Tx_imp_step_02.dds Tx_imp_step_03.dds Tx_imp_step_04.dds Tx_imp_step_05.dds Tx_imp_step_06.dds Tx_imp_step_06.dds ATL/temp12.bmp ATL/temp13.bmp ATL/temp15.bmp  -append  ATL/tx_imperial_atlas1.dds
+Tx_imp_wall_01.dds Tx_imp_wall_02.dds Tx_imp_wall_03.dds Tx_imp_walltop_01.dds Tx_imp_walltop_01.dds Tx_imp_walltop_01.dds Tx_imp_walltop_01.dds  -append  ATL/tx_imperial_atlas2.dds

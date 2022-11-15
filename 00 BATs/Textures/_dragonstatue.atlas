@@ -1,0 +1,24 @@
+[variables]
+resolutionE = 128
+resolutionW = 256
+
+[widths]
+tx_dragonstatue_body.dds = 128
+tx_dragonstatue_eye.dds = 32
+tx_dragonstatue_foot.dds = 128
+tx_dragonstatue_head.dds = 256
+tx_dragonstatue_leg.dds = 256
+tx_dragonstatue_metal2.dds = 128
+tx_dragonstatue_metal3.dds = 128
+tx_dragonstatue_metal_1.dds = 128
+tx_dragonstatue_wing.dds = 256
+tx_marble_black.dds = 128
+
+[commands]
+tx_dragonstatue_eye.dds -gravity Northwest -background black -extent {resolutionE}x{resolutionE} ATL/temp1.bmp
+tx_dragonstatue_body.dds ATL/temp1.bmp -resize {resolutionE} -append ATL/temp2.bmp
+tx_dragonstatue_foot.dds ATL/temp2.bmp -resize x{resolutionW} +append ATL/temp3.bmp
+tx_dragonstatue_metal_1.dds tx_dragonstatue_metal_1.dds -resize x{resolutionE} +append ATL/temp4.bmp
+tx_dragonstatue_metal2.dds tx_dragonstatue_metal2.dds -resize x{resolutionE} +append ATL/temp5.bmp
+tx_dragonstatue_metal3.dds tx_marble_black.dds -resize x{resolutionE} +append ATL/temp6.bmp
+ATL/temp3.bmp tx_dragonstatue_head.dds tx_dragonstatue_leg.dds ATL/temp4.bmp ATL/temp5.bmp ATL/temp6.bmp tx_dragonstatue_wing.dds  -append -gravity north -background black ATL/tx_drag_stat_atlas.dds

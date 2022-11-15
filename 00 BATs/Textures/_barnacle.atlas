@@ -1,0 +1,6 @@
+[widths]
+tx_barnacle_01.dds = 64
+tx_barnacle_02.dds = 64
+
+[commands]
+tx_barnacle_01.dds tx_barnacle_02.dds  -append  ATL/atlad_barnacle.dds
