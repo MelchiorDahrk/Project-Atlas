@@ -160,7 +160,9 @@ def generate_atlas(atlas_file: str, multiplier: Optional[Fraction] = None):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("atlas_file", help="Atlas template file for processing")
+    parser.add_argument(
+        "atlas_file", help="Atlas template file for processing", nargs="*"
+    )
     parser.add_argument(
         "--multiplier",
         help="Size multiplier for the atlas. "
@@ -170,4 +172,6 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args(sys.argv[1:])
-    generate_atlas(args.atlas_file, args.multiplier)
+    for file in args.atlas_file:
+        print(f"Generating atlases from {file}")
+        generate_atlas(file, args.multiplier)
