@@ -52,6 +52,11 @@ from subprocess import check_call, check_output
 from typing import Tuple, List, Dict, Optional
 
 
+def get_path(texture_name: str) -> str:
+    """Returns the path for the file. Meant to be patched to support systems like OpenMW/Portmod"""
+    return texture_name
+
+
 def read_atlas(atlas_file: str) -> Tuple[Dict[str, int], Dict[str, int], List[str]]:
     widths = {}
     variables = {}
@@ -89,7 +94,7 @@ def generate_atlas(atlas_file: str, multiplier: Optional[Fraction] = None):
     # Determine Atlas base width, using the median texture size after adjusting for the ratios
     if multiplier is None:
         outputs = check_output(
-            ["magick", "convert"] + list(widths.keys())+ ["-format", "%w ", "info:"],
+            ["magick", "convert"] + list(map(get_path, widths.keys())) + ["-format", "%w ", "info:"],
             encoding="utf-8",
             text=True,
         ).split()
@@ -133,7 +138,7 @@ def generate_atlas(atlas_file: str, multiplier: Optional[Fraction] = None):
                 # Each input texture is resized so that textures being larger/smaller
                 # than expected does not break the atlas
                 width = multiplier * widths[word]
-                new_command.extend(["(", word, "-resize", str(width), ")"])
+                new_command.extend(["(", get_path(word), "-resize", str(width), ")"])
             else:
                 new_command.append(word)
         # Set compression for dds outputs
