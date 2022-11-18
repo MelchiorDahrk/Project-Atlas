@@ -1,0 +1,24 @@
+[variables]
+lwStripW = 32
+lwStripH = 18
+resolutionW = 512
+resolutionH = 128
+
+[widths]
+tx_limeware_platter.dds = 256
+tx_limeware_platter_01.dds = 256
+tx_limeware_strip_01.dds = 32
+tx_limeware_strip_02.dds = 32
+tx_limeware_strip_03.dds = 32
+tx_limeware_top.dds = 64
+
+[commands]
+tx_limeware_strip_01.dds -crop {lwStripW}x{lwStripH}+0+0 -rotate 90 +append ATL/temp1.bmp
+ATL/temp1.bmp ATL/temp1.bmp ATL/temp1.bmp ATL/temp1.bmp -append ATL/temp2.bmp
+ATL/temp2.bmp -resize x{resolutionH} -append ATL/temp2.bmp
+tx_limeware_platter.dds tx_limeware_platter_01.dds ATL/temp2.bmp +append ATL/temp3.bmp
+ATL/temp3.bmp -resize {resolutionW}! +append ATL/atlad_lwplatter.dds
+
+tx_limeware_strip_01.dds tx_limeware_strip_02.dds tx_limeware_strip_03.dds -append ATL/temp4.bmp
+ATL/temp4.bmp ATL/temp4.bmp +append ATL/temp5.bmp
+ATL/temp5.bmp tx_limeware_top.dds tx_limeware_top.dds -append ATL/atlad_lw.dds

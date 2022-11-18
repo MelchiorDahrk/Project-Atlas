@@ -1,0 +1,30 @@
+[widths]
+tx_daed_azura_face.dds = 256
+# vanilla is 512
+tx_daed_malacath_backtorso.dds = 256
+tx_daed_malacath_belt_center_piece.dds = 64
+tx_daed_malacath_ear.dds = 32
+tx_daed_malacath_face.dds = 256
+tx_daed_malacath_feet.dds = 128
+# vanilla is 512
+tx_daed_malacath_fronttorso.dds = 256
+tx_daed_malacath_hair.dds = 128
+tx_daed_malacath_hand.dds = 64
+tx_daed_malacath_lower_leg.dds = 128
+tx_daed_malacath_skirtback.dds = 128
+tx_daed_malacath_skirtfront.dds = 128
+tx_daed_malacath_sword.dds = 256
+tx_daed_malacath_upper_leg.dds = 128
+
+[commands]
+tx_daed_malacath_hair.dds tx_daed_malacath_hand.dds -gravity southeast -composite -append ATL/mala00.bmp
+tx_daed_malacath_skirtback.dds tx_daed_malacath_skirtfront.dds +append ATL/mala1.bmp
+tx_daed_malacath_feet.dds ATL/mala00.bmp -append ATL/mala2.bmp
+tx_daed_malacath_upper_leg.dds tx_daed_malacath_lower_leg.dds -append ATL/mala3.bmp
+ATL/mala1.bmp ATL/mala2.bmp ATL/mala3.bmp +append ATL/mala5.bmp
+tx_daed_malacath_fronttorso.dds tx_daed_malacath_backtorso.dds -append ATL/mala6.bmp
+ATL/mala6.bmp tx_daed_malacath_belt_center_piece.dds -gravity southwest -composite -append ATL/mala7.bmp
+ATL/mala7.bmp tx_daed_malacath_ear.dds -gravity southeast -composite -append ATL/mala8.bmp
+tx_daed_malacath_face.dds tx_daed_malacath_sword.dds -append ATL/mala9.bmp
+ATL/mala8.bmp ATL/mala9.bmp +append ATL/mala10.bmp
+ATL/mala5.bmp ATL/mala10.bmp -append  ATL/atlad_dae_stat_mala.dds

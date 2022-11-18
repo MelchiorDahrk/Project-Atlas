@@ -1,0 +1,24 @@
+[variables]
+resolutionH = 2048
+
+[widths]
+tx_metal_iron_rusty.dds = 256
+tx_rope_heavy.dds = 128
+tx_shack_foundation.dds = 256
+tx_shack_screen.dds = 64
+tx_shack_thatch.dds = 256
+tx_wood_shack_door.dds = 128
+tx_wood_siding.dds = 256
+tx_wood_siding_01.dds = 256
+tx_wood_weathered_rings.dds = 64
+tx_wood_weathered_rings_01.dds = 64
+tx_wood_wethered.dds = 128
+
+[commands]
+tx_wood_weathered_rings.dds tx_wood_weathered_rings_01.dds -append ATL/temp1.bmp
+tx_shack_screen.dds tx_shack_screen.dds -append ATL/temp2.bmp
+ATL/temp2.bmp ATL/temp2.bmp ATL/temp2.bmp ATL/temp1.bmp +append ATL/temp3.bmp
+tx_wood_wethered.dds tx_wood_wethered.dds +append ATL/temp4.bmp
+tx_rope_heavy.dds tx_rope_heavy.dds +append ATL/temp5.bmp
+tx_wood_shack_door.dds -rotate 90 -append ATL/temp6.bmp
+tx_wood_siding.dds tx_wood_siding_01.dds tx_shack_foundation.dds ATL/temp4.bmp ATL/temp4.bmp tx_shack_thatch.dds tx_shack_thatch.dds ATL/temp3.bmp ATL/temp5.bmp ATL/temp6.bmp tx_metal_iron_rusty.dds -append -extent x{resolutionH} ATL/atlad_shack.dds

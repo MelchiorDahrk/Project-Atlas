@@ -1,0 +1,6 @@
+[widths]
+Tx_marshmerrow_02.dds = 16
+Tx_marshmerrow_03.dds = 128
+
+[commands]
+Tx_marshmerrow_03.dds Tx_marshmerrow_02.dds -gravity east -background black -composite  +append  ATL/atlad_marshmerrow.dds

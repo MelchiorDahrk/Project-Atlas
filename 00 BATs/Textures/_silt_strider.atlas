@@ -1,48 +1,46 @@
-[ratios]
-tx_siltstrider_skin_00.dds = 1
-tx_siltstrider_skin_01.dds = 1
-tx_siltstrider_skin_04.dds = 1/4
-tx_siltstrider_skin_07.dds = 1/4
-tx_siltstrider_skin_02.dds = 1/2
-tx_siltstrider_skin_03.dds = 1/2
-tx_siltstrider_stem_00.dds = 1/4
-tx_siltstrider_stem_01.dds = 1/4
-tx_siltstrider_skin_05.dds = 1/4
-tx_siltstrider_skin_06.dds = 1/4
-tx_siltstrider_skin_08.dds = 1/4
-tx_siltstrider_skin_09.dds = 1/4
-tx_siltstrider_skin_11.dds = 1/4
-tx_siltstrider_skin_12.dds = 1/4
-tx_siltstrider_skin_13.dds = 1/4
-tx_creature_duskyalit_09.dds = 1/2
-tx_siltstrider_dead_00.dds = 1
-tx_siltstrider_dead_01.dds = 1
-tx_siltstrider_dead_01.dds = 1
-tx_siltstrider_dead_02.dds = 1/2
-tx_siltstrider_dead_03.dds = 1/2
-tx_siltstrider_dead_04.dds = 1/4
-tx_siltstrider_dead_05.dds = 1/4
-tx_siltstrider_dead_06.dds = 1/4
-tx_siltstrider_dead_07.dds = 1
-tx_siltstrider_dead_11.dds = 1/4
+[widths]
+tx_creature_duskyalit_09.dds = 128
+tx_siltstrider_dead_00.dds = 256
+tx_siltstrider_dead_01.dds = 256
+tx_siltstrider_dead_02.dds = 128
+tx_siltstrider_dead_03.dds = 128
+tx_siltstrider_dead_04.dds = 64
+tx_siltstrider_dead_05.dds = 64
+tx_siltstrider_dead_06.dds = 64
+tx_siltstrider_dead_07.dds = 256
+tx_siltstrider_dead_11.dds = 64
+tx_siltstrider_skin_00.dds = 256
+tx_siltstrider_skin_01.dds = 256
+tx_siltstrider_skin_02.dds = 128
+tx_siltstrider_skin_03.dds = 128
+tx_siltstrider_skin_04.dds = 64
+tx_siltstrider_skin_05.dds = 64
+tx_siltstrider_skin_06.dds = 64
+tx_siltstrider_skin_07.dds = 64
+tx_siltstrider_skin_08.dds = 64
+tx_siltstrider_skin_09.dds = 64
+tx_siltstrider_skin_11.dds = 64
+tx_siltstrider_skin_12.dds = 64
+tx_siltstrider_skin_13.dds = 64
+tx_siltstrider_stem_00.dds = 64
+tx_siltstrider_stem_01.dds = 64
 
 [commands]
-tx_siltstrider_skin_00.dds tx_siltstrider_skin_01.dds -append mpr:temp1
-tx_siltstrider_skin_04.dds tx_siltstrider_skin_04.dds -rotate 90 +append mpr:temp2
-tx_siltstrider_skin_07.dds tx_siltstrider_skin_07.dds -rotate 90 +append mpr:temp3
-tx_siltstrider_skin_02.dds tx_siltstrider_skin_03.dds +append mpr:temp4
-tx_siltstrider_stem_01.dds tx_siltstrider_stem_01.dds -append mpr:temp5
-mpr:temp5 tx_siltstrider_stem_00.dds -layers merge -gravity north -append mpr:temp6
-tx_siltstrider_skin_09.dds tx_siltstrider_skin_12.dds -append mpr:temp7
-tx_siltstrider_skin_11.dds -rotate -90 +append mpr:temp8
-tx_siltstrider_skin_08.dds tx_siltstrider_skin_13.dds tx_siltstrider_skin_13.dds mpr:temp8 -rotate 90 +append mpr:temp9
-tx_siltstrider_skin_05.dds tx_siltstrider_skin_05.dds -append mpr:temp10
-mpr:temp10 mpr:temp10 mpr:temp10 tx_siltstrider_skin_06.dds +append mpr:temp11
-mpr:temp6 mpr:temp7 tx_creature_duskyalit_09.dds +append mpr:temp12
-mpr:temp1 mpr:temp2 mpr:temp3 mpr:temp4 mpr:temp12 mpr:temp9 mpr:temp11 -append ATL/atlad_siltstrider.dds
-
-tx_siltstrider_dead_02.dds tx_siltstrider_dead_03.dds +append mpr:temp110
-tx_siltstrider_dead_04.dds tx_siltstrider_dead_04.dds -rotate 90 +append mpr:temp120
-tx_siltstrider_dead_05.dds tx_siltstrider_dead_05.dds -append mpr:temp130
-tx_siltstrider_dead_06.dds tx_siltstrider_dead_11.dds mpr:temp130 mpr:temp130 +append mpr:temp140
-tx_siltstrider_dead_00.dds tx_siltstrider_dead_01.dds mpr:temp110 tx_siltstrider_dead_07.dds mpr:temp120 mpr:temp140 -append ATL/atlad_siltstrider_d.dds
+tx_siltstrider_skin_00.dds tx_siltstrider_skin_01.dds -append ATL/temp1.bmp
+tx_siltstrider_skin_04.dds tx_siltstrider_skin_04.dds -rotate 90 +append ATL/temp2.bmp
+tx_siltstrider_skin_07.dds tx_siltstrider_skin_07.dds -rotate 90 +append ATL/temp3.bmp
+tx_siltstrider_skin_02.dds tx_siltstrider_skin_03.dds +append ATL/temp4.bmp
+tx_siltstrider_stem_01.dds tx_siltstrider_stem_01.dds -append ATL/temp5.bmp
+ATL/temp5.bmp tx_siltstrider_stem_00.dds -layers merge -gravity north -append ATL/temp6.bmp
+tx_siltstrider_skin_09.dds tx_siltstrider_skin_12.dds -append ATL/temp7.bmp
+tx_siltstrider_skin_11.dds -rotate -90 +append ATL/temp8.bmp
+tx_siltstrider_skin_08.dds tx_siltstrider_skin_13.dds tx_siltstrider_skin_13.dds ATL/temp8.bmp -rotate 90 +append ATL/temp9.bmp
+tx_siltstrider_skin_05.dds tx_siltstrider_skin_05.dds -append ATL/temp10.bmp
+ATL/temp10.bmp ATL/temp10.bmp ATL/temp10.bmp tx_siltstrider_skin_06.dds +append ATL/temp11.bmp
+ATL/temp6.bmp ATL/temp7.bmp tx_creature_duskyalit_09.dds +append ATL/temp12.bmp
+ATL/temp1.bmp ATL/temp2.bmp ATL/temp3.bmp ATL/temp4.bmp ATL/temp12.bmp ATL/temp9.bmp ATL/temp11.bmp -append  ATL/atlad_siltstrider.dds
+tx_siltstrider_dead_02.dds tx_siltstrider_dead_03.dds +append ATL/temp110.bmp
+tx_siltstrider_dead_04.dds tx_siltstrider_dead_04.dds -rotate 90 +append ATL/temp120.bmp
+tx_siltstrider_dead_05.dds tx_siltstrider_dead_05.dds -append ATL/temp130.bmp
+tx_siltstrider_dead_06.dds tx_siltstrider_dead_11.dds ATL/temp130.bmp ATL/temp130.bmp +append ATL/temp140.bmp
+tx_siltstrider_dead_00.dds tx_siltstrider_dead_01.dds ATL/temp110.bmp tx_siltstrider_dead_07.dds ATL/temp120.bmp ATL/temp140.bmp -append  ATL/atlad_siltstrider_d.dds
