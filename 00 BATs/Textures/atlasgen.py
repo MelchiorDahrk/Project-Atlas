@@ -126,7 +126,7 @@ def generate_atlas(atlas_file: str, multiplier: Optional[Fraction] = None):
                     expr = expr.replace(key, str(value * multiplier))
             return str(reduce(operator.mul, map(Fraction, expr.split("*"))))
 
-        return re.sub(r"{([0-9.]+|\*|[a-zA-Z]+)+?}", inner, string)
+        return re.sub(r"{([0-9.]+|\*|\/|[a-zA-Z]+)+?}", inner, string)
 
     for command in commands:
         command = arithmetic_sub(command)
