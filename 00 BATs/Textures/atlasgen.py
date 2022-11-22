@@ -108,7 +108,7 @@ def generate_atlas(atlas_file: str, multiplier: Optional[Fraction] = None):
     # Commands are merged into one magick convert call
     # (requires adding a '-write' before each output)
     # This also allows the use of mpr references between commands
-    outputs = []
+    outputs = set()
     combined_commands = []
 
     def arithmetic_sub(string: str) -> str:
@@ -132,7 +132,7 @@ def generate_atlas(atlas_file: str, multiplier: Optional[Fraction] = None):
         command = arithmetic_sub(command)
         new_command = []
         output = shlex.split(command)[-1]
-        outputs.append(output)
+        outputs.add(output)
         for word in shlex.split(command)[:-1]:
             if word.lower().endswith(".dds"):
                 # Each input texture is resized so that textures being larger/smaller
