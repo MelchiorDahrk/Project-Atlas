@@ -1,7 +1,0 @@
-[widths]
-Tx_bittergreen_01.dds = 64
-Tx_willow_flower_01.dds = 128
-Tx_willow_flower_03.dds = 64
-
-[commands]
-Tx_willow_flower_01.dds Tx_willow_flower_03.dds Tx_bittergreen_01.dds +append  ATL/atlad_willow_flower.dds

@@ -1,0 +1,8 @@
+Ebony Mail
+
+[widths]
+tx_cuirass_ebon00.dds = 256
+tx_cuirass_ebon01.dds = 256
+
+[commands]
+tx_cuirass_ebon00.dds tx_cuirass_ebon01.dds  +append  ATL/atlad_a_cuirass_ebon.dds

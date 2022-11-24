@@ -1,0 +1,17 @@
+Kelp
+
+[variables]
+resolutionH = 256
+
+[widths]
+tx_kelp_01.dds = 32
+tx_kelp_02.dds = 32
+tx_kelp_03.dds = 128
+tx_kelp_04.dds = 32
+
+[commands]
+tx_kelp_02.dds -rotate 90 +append ATL/temp1.bmp
+ATL/temp1.bmp ATL/temp1.bmp tx_kelp_04.dds -append ATL/temp2.bmp
+ATL/temp2.bmp ATL/temp2.bmp ATL/temp2.bmp ATL/temp2.bmp +append ATL/temp3.bmp
+tx_kelp_01.dds -rotate 90 +append ATL/temp4.bmp
+tx_kelp_03.dds ATL/temp4.bmp ATL/temp3.bmp -append -gravity north -background "#26280d" -extent x{resolutionH}  ATL/atlad_kelp.dds

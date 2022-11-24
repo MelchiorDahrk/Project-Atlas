@@ -1,6 +1,0 @@
-[widths]
-TX_A_apostle_boots00.dds = 128
-TX_A_apostle_boots01.dds = 128
-
-[commands]
-TX_A_apostle_boots00.dds TX_A_apostle_boots01.dds  +append  ATL/atlad_a_boots_apostle.dds

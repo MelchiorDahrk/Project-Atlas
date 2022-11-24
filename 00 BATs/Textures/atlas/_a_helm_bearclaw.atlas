@@ -1,0 +1,11 @@
+Helm of Oreyn Bearclaw
+
+[widths]
+tx_helm_bearclaw00.dds = 256
+tx_helm_bearclaw01.dds = 64
+tx_helm_bearclaw02.dds = 128
+
+[commands]
+tx_helm_bearclaw01.dds tx_helm_bearclaw01.dds -append ATL/temp1.bmp
+ATL/temp1.bmp ATL/temp1.bmp tx_helm_bearclaw02.dds +append ATL/temp2.bmp
+tx_helm_bearclaw00.dds ATL/temp2.bmp  -append  ATL/atlad_a_helm_bearclaw.dds

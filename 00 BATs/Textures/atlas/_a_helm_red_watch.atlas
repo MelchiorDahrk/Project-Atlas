@@ -1,0 +1,8 @@
+Redoran Watchman Helm
+
+[widths]
+tx_A_watchmanHelm.dds = 256
+tx_A_watchmanHelm01.dds = 256
+
+[commands]
+tx_A_watchmanHelm.dds tx_A_watchmanHelm01.dds  +append  ATL/atlad_a_helm_red_watch.dds

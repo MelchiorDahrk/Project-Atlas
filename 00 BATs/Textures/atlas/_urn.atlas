@@ -1,0 +1,11 @@
+Urn
+
+[widths]
+tx_urn_01.dds = 128
+tx_urn_plain_01.dds = 64
+tx_urn_strip_01.dds = 128
+tx_urn_top_01.dds = 128
+
+[commands]
+tx_urn_plain_01.dds tx_urn_plain_01.dds +append ATL/temp1.bmp
+tx_urn_01.dds tx_urn_01.dds tx_urn_top_01.dds ATL/temp1.bmp tx_urn_strip_01.dds tx_urn_strip_01.dds  -append  ATL/tx_urns_atlas.dds
