@@ -145,7 +145,7 @@ def generate_atlas(atlas_file: str, multiplier: Optional[Fraction] = None):
         # so that it doesn't have to be specified in the template
         # (can still be overridden by the template)
         if output.lower().endswith(".dds") and "dds:compression=" not in command:
-            new_command.extend(["-define", "dds:compreession=dxt1"])
+            new_command.extend(["-define", "dds:compression=dxt1"])
         # Make sure parent directories of the output file exist
         if not output.lower().startswith("mpr:"):
             os.makedirs(os.path.dirname(output), exist_ok=True)
