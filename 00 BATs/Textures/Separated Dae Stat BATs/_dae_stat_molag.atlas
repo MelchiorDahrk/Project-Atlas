@@ -1,0 +1,22 @@
+[widths]
+tx_daed_azura_face.dds = 256
+tx_daed_molagbal_arm.dds = 128
+tx_daed_molagbal_backtorso.dds = 128
+tx_daed_molagbal_ear.dds = 128
+tx_daed_molagbal_foot.dds = 128
+tx_daed_molagbal_fronttorso.dds = 128
+tx_daed_molagbal_hand.dds = 128
+tx_daed_molagbal_head.dds = 128
+tx_daed_molagbal_horn.dds = 64
+tx_daed_molagbal_jaw.dds = 128
+tx_daed_molagbal_lowerleg.dds = 128
+tx_daed_molagbal_tail.dds = 128
+tx_daed_molagbal_tongue.dds = 64
+tx_daed_molagbal_upperleg.dds = 128
+
+[commands]
+tx_daed_molagbal_horn.dds tx_daed_molagbal_tongue.dds +append ATL/mol1.bmp
+tx_daed_molagbal_fronttorso.dds tx_daed_molagbal_head.dds tx_daed_molagbal_ear.dds ATL/mol1.bmp -append ATL/mol2.bmp
+tx_daed_molagbal_backtorso.dds tx_daed_molagbal_jaw.dds tx_daed_molagbal_hand.dds tx_daed_molagbal_hand.dds -append ATL/mol3.bmp
+ATL/mol2.bmp ATL/mol3.bmp +append  ATL/atlad_dae_molag.dds
+tx_daed_molagbal_upperleg.dds tx_daed_molagbal_lowerleg.dds tx_daed_molagbal_foot.dds tx_daed_molagbal_tail.dds tx_daed_molagbal_arm.dds -append  ATL/atlad_dae_molag01.dds

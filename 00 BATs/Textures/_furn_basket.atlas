@@ -1,0 +1,10 @@
+[variables]
+resolutionH = 256
+
+[widths]
+tx_rope_heavy.dds = 128
+tx_wicker_border_01.dds = 128
+tx_wicker_brown_02.dds = 128
+
+[commands]
+tx_wicker_brown_02.dds tx_wicker_brown_02.dds tx_rope_heavy.dds tx_wicker_border_01.dds -gravity north -background "#574b33" -append -extent x{resolutionH} ATL/atlas_furn_basket.dds

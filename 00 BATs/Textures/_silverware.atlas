@@ -1,0 +1,14 @@
+[variables]
+resolutionH = 512
+
+[widths]
+tx_metal_silver.dds = 64
+tx_metal_silver_plate_01.dds = 128
+tx_metal_silver_strip_01.dds = 128
+tx_metal_silver_strip_02.dds = 128
+tx_metal_silver_strip_03.dds = 64
+
+[commands]
+tx_metal_silver.dds tx_metal_silver.dds +append ATL/temp1.bmp
+tx_metal_silver_strip_03.dds tx_metal_silver_strip_03.dds +append ATL/temp2.bmp
+tx_metal_silver_plate_01.dds tx_metal_silver_strip_01.dds tx_metal_silver_strip_01.dds tx_metal_silver_strip_02.dds tx_metal_silver_strip_02.dds ATL/temp2.bmp ATL/temp1.bmp ATL/temp1.bmp  -append -gravity north -background black -extent x{resolutionH}  ATL/atlad_silverware.dds

@@ -31,43 +31,43 @@ if %_inputEval% LSS 0 goto type
 
 if %_inputEval% EQU 0 (
 @echo Generating ashtree atlas.
-call "_ashtree_atlas_generator.bat"
+python3 atlasgen.py "_ashtree_atlas.atlas"
 )
 if %_inputEval% EQU 1 (
 @echo Generating azura's coast tree atlas.
-call "_ac_trees_atlas_generator.bat"
+python3 atlasgen.py "_ac_trees_atlas.atlas"
 )
 if %_inputEval% EQU 2 (
 @echo Generating Azura statue atlas.
-call "Separated Dae Stat BATs\_dae_stat_azura_atlas_generator.bat"
+python3 atlasgen.py "Separated Dae Stat BATs\_dae_stat_azura_atlas.atlas"
 )
 if %_inputEval% EQU 3 (
 @echo Generating barnacle atlas.
-call "_barnacle_atlas_generator.bat"
+python3 atlasgen.py "_barnacle_atlas.atlas"
 )
 if %_inputEval% EQU 4 (
 @echo Generating Bloodmoon cave door atlas.
-call "_bm_cavedoor_atlas_generator.bat"
+python3 atlasgen.py "_bm_cavedoor_atlas.atlas"
 )
 if %_inputEval% EQU 5 (
 @echo Generating Bloodmoon colony tileset atlas.
-call "_colony_atlas_generator.bat"
+python3 atlasgen.py "_colony_atlas.atlas"
 )
 if %_inputEval% EQU 6 (
 @echo Generating Boethiah statue atlas.
-call "Separated Dae Stat BATs\_dae_stat_boe_atlas_generator.bat"
+python3 atlasgen.py "Separated Dae Stat BATs\_dae_stat_boe_atlas.atlas"
 )
 if %_inputEval% EQU 7 (
 @echo Generating common tileset atlas.
-call "_nordcommon_atlas_generator.bat"
+python3 atlasgen.py "_nordcommon_atlas.atlas"
 )
 if %_inputEval% EQU 8 (
 @echo Generating coins atlas.
-call "_coins_atlas_generator.bat"
+python3 atlasgen.py "_coins_atlas.atlas"
 )
 if %_inputEval% EQU 9 (
 @echo Generating dark elf furniture atlas.
-call "_furn_de_atlas_generator.bat"
+python3 atlasgen.py "_furn_de_atlas.atlas"
 )
 if %_inputEval% EQU 10 (
 @echo Generating doors atlas.
@@ -75,83 +75,83 @@ python3 atlasgen.py _doors.atlas
 )
 if %_inputEval% EQU 11 (
 @echo Generating dragon statue atlas.
-call "_dragonstatue_atlas_generator.bat"
+python3 atlasgen.py "_dragonstatue_atlas.atlas"
 )
 if %_inputEval% EQU 12 (
 @echo Generating emperor parasol atlas.
-call "_emperor_parasol_atlas_generator.bat"
+python3 atlasgen.py "_emperor_parasol_atlas.atlas"
 )
 if %_inputEval% EQU 13 (
 @echo Generating fungus atlas.
-call "_bc_fungus_atlas_generator.bat"
+python3 atlasgen.py "_bc_fungus_atlas.atlas"
 )
 if %_inputEval% EQU 14 (
 @echo Generating hlaalu tileset atlas.
-call "_hlaalu_atlas_generator.bat"
+python3 atlasgen.py "_hlaalu_atlas.atlas"
 )
 if %_inputEval% EQU 15 (
 @echo Generating imperial tileset atlas.
-call "_imperial_atlas_generator.bat"
+python3 atlasgen.py "_imperial_atlas.atlas"
 )
 if %_inputEval% EQU 16 (
 @echo Generating kelp atlas.
-call "_kelp_atlas_generator.bat"
+python3 atlasgen.py "_kelp_atlas.atlas"
 )
 if %_inputEval% EQU 17 (
 @echo Generating limeware atlas.
-call "_limeware_atlas_generator.bat"
+python3 atlasgen.py "_limeware_atlas.atlas"
 )
 if %_inputEval% EQU 18 (
 @echo Generating mace of Molag Bal atlas.
-call "_w_mace_molag_bal_atlas_generator.bat"
+python3 atlasgen.py "_w_mace_molag_bal_atlas.atlas"
 )
 if %_inputEval% EQU 19 (
 @echo Generating Malacath statue atlas.
-call "Separated Dae Stat BATs\_dae_stat_malacath_atlas_generator.bat"
+python3 atlasgen.py "Separated Dae Stat BATs\_dae_stat_malacath_atlas.atlas"
 )
 if %_inputEval% EQU 20 (
 @echo Generating Molag Bal statue atlas.
-call "Separated Dae Stat BATs\_dae_stat_molag_atlas_generator.bat"
+python3 atlasgen.py "Separated Dae Stat BATs\_dae_stat_molag_atlas.atlas"
 )
 if %_inputEval% EQU 21 (
 @echo Generating mushrooms atlas.
-call "_bc_mushrooms_atlas_generator.bat"
+python3 atlasgen.py "_bc_mushrooms_atlas.atlas"
 )
 if %_inputEval% EQU 22 (
 @echo Generating mushrooms only atlas.
-call "_bc_mushroom_only_atlas_generator.bat"
+python3 atlasgen.py "_bc_mushroom_only_atlas.atlas"
 )
 if %_inputEval% EQU 23 (
 @echo Generating nordic tileset atlas.
-call "_nord_atlas_generator.bat"
+python3 atlasgen.py "_nord_atlas.atlas"
 )
 if %_inputEval% EQU 24 (
 @echo Generating redoran tileset atlas.
-call "_redoran_atlas_generator.bat"
+python3 atlasgen.py "_redoran_atlas.atlas"
 )
 if %_inputEval% EQU 25 (
 @echo Generating redware atlas.
-call "_redware_atlas_generator.bat"
+python3 atlasgen.py "_redware_atlas.atlas"
 )
 if %_inputEval% EQU 26 (
 @echo Generating redware pot atlas.
-call "_redware_pot_atlas_generator.bat"
+python3 atlasgen.py "_redware_pot_atlas.atlas"
 )
 if %_inputEval% EQU 27 (
 @echo Generating saints statues atlas.
-call "_stat_saints_atlas_generator.bat"
+python3 atlasgen.py "_stat_saints_atlas.atlas"
 )
 if %_inputEval% EQU 28 (
 @echo Generating shack atlas.
-call "_shack_atlas_generator.bat"
+python3 atlasgen.py "_shack_atlas.atlas"
 )
 if %_inputEval% EQU 29 (
 @echo Generating Sheogorath statue atlas.
-call "Separated Dae Stat BATs\_dae_stat_sheo_atlas_generator.bat"
+python3 atlasgen.py "Separated Dae Stat BATs\_dae_stat_sheo_atlas.atlas"
 )
 if %_inputEval% EQU 30 (
 @echo Generating ship atlas.
-call "_ship_atlas_generator.bat"
+python3 atlasgen.py "_ship_atlas.atlas"
 )
 if %_inputEval% EQU 31 (
 @echo Generating silt strider atlas.
@@ -159,43 +159,43 @@ python3 atlasgen.py _silt_strider.atlas
 )
 if %_inputEval% EQU 32 (
 @echo Generating silverware atlas.
-call "_silverware_atlas_generator.bat"
+python3 atlasgen.py "_silverware_atlas.atlas"
 )
 if %_inputEval% EQU 33 (
 @echo Generating sixth house atlas.
-call "_sixth_house_atlas_generator.bat"
+python3 atlasgen.py "_sixth_house_atlas.atlas"
 )
 if %_inputEval% EQU 34 (
 @echo Generating skeleton atlas.
-call "_skeleton_atlas_generator.bat"
+python3 atlasgen.py "_skeleton_atlas.atlas"
 )
 if %_inputEval% EQU 35 (
 @echo Generating urn atlas.
-call "_urn_atlas_generator.bat"
+python3 atlasgen.py "_urn_atlas.atlas"
 )
 if %_inputEval% EQU 36 (
 @echo Generating velothi tileset atlas.
-call "_velothi_atlas_generator.bat"
+python3 atlasgen.py "_velothi_atlas.atlas"
 )
 if %_inputEval% EQU 37 (
 @echo Generating wood docks atlas.
-call "_wood_docks_generator.bat"
+python3 atlasgen.py "_wood_docks.atlas"
 )
 if %_inputEval% EQU 38 (
 @echo Generating woodpoles atlas.
-call "_woodpoles_atlas_generator.bat"
+python3 atlasgen.py "_woodpoles_atlas.atlas"
 )
 if %_inputEval% EQU 39 (
 @echo Generating large basket atlas.
-call "_furn_basket_atlas_generator.bat"
+python3 atlasgen.py "_furn_basket_atlas.atlas"
 )
 if %_inputEval% EQU 40 (
 @echo Generating Ebony Mail atlas.
-call "_a_cuirass_ebon_atlas_generator.bat"
+python3 atlasgen.py "_a_cuirass_ebon_atlas.atlas"
 )
 if %_inputEval% EQU 41 (
 @echo Generating Helm of Oreyn Bearclaw atlas.
-call "_a_helm_bearclaw_atlas_generator.bat"
+python3 atlasgen.py "_a_helm_bearclaw_atlas.atlas"
 )
 if %_inputEval% EQU 42 (
 @echo Generating Boots of the Apostle atlas.
@@ -203,169 +203,169 @@ python3 atlasgen.py _a_boots_apostle.atlas
 )
 if %_inputEval% EQU 43 (
 @echo Generating Redoran Watchman Helm atlas.
-call "_a_helm_red_watch_atlas_generator.bat"
+python3 atlasgen.py "_a_helm_red_watch_atlas.atlas"
 )
 if %_inputEval% EQU 98 (
     @echo Starting to build all atlases.
-    if exist "_ashtree_atlas_generator.bat" (
+    if exist "_ashtree_atlas.atlas" (
         @echo Generating ashtree atlas.
-        call "_ashtree_atlas_generator.bat"
+        python3 atlasgen.py "_ashtree_atlas.atlas"
     )
-    if exist "_ac_trees_atlas_generator.bat" (
+    if exist "_ac_trees_atlas.atlas" (
         @echo Generating azura's coast tree atlas.
-        call "_ac_trees_atlas_generator.bat"
+        python3 atlasgen.py "_ac_trees_atlas.atlas"
     )
-    if exist "_barnacle_atlas_generator.bat" (
+    if exist "_barnacle_atlas.atlas" (
         @echo Generating barnacle atlas.
-        call "_barnacle_atlas_generator.bat"
+        python3 atlasgen.py "_barnacle_atlas.atlas"
     )
-    if exist "_bm_cavedoor_atlas_generator.bat" (
+    if exist "_bm_cavedoor_atlas.atlas" (
         @echo Generating Bloodmoon cave door atlas.
-        call "_bm_cavedoor_atlas_generator.bat"
+        python3 atlasgen.py "_bm_cavedoor_atlas.atlas"
     )
-    if exist "_colony_atlas_generator.bat" (
+    if exist "_colony_atlas.atlas" (
         @echo Generating Bloodmoon colony tileset atlas. This will take a while...
-        call "_colony_atlas_generator.bat"
+        python3 atlasgen.py "_colony_atlas.atlas"
     )
-    if exist "_coins_atlas_generator.bat" (
+    if exist "_coins_atlas.atlas" (
         @echo Generating coins atlas.
-        call "_coins_atlas_generator.bat"
+        python3 atlasgen.py "_coins_atlas.atlas"
     )
-    if exist "_nordcommon_atlas_generator.bat" (
+    if exist "_nordcommon_atlas.atlas" (
         @echo Generating common atlas.
-        call "_nordcommon_atlas_generator.bat"
+        python3 atlasgen.py "_nordcommon_atlas.atlas"
     )
-    if exist "_furn_de_atlas_generator.bat" (
+    if exist "_furn_de_atlas.atlas" (
         @echo Generating dark elf furniture atlas.
-        call "_furn_de_atlas_generator.bat"
+        python3 atlasgen.py "_furn_de_atlas.atlas"
     )
-    if exist "_dae_stat_atlas_generator.bat" (
+    if exist "_dae_stat_atlas.atlas" (
         @echo Generating daedric statues atlas.
-        call "_dae_stat_atlas_generator.bat"
+        python3 atlasgen.py "_dae_stat_atlas.atlas"
     )
-    if exist "_doors_atlas_generator.bat" (
+    if exist "_doors_atlas.atlas" (
         @echo Generating doors atlas.
-        call "_doors_atlas_generator.bat"
+        python3 atlasgen.py "_doors_atlas.atlas"
     )
-    if exist "_dragonstatue_atlas_generator.bat" (
+    if exist "_dragonstatue_atlas.atlas" (
         @echo Generating dragon statue atlas.
-        call "_dragonstatue_atlas_generator.bat"
+        python3 atlasgen.py "_dragonstatue_atlas.atlas"
     )
-    if exist "_emperor_parasol_atlas_generator.bat" (
+    if exist "_emperor_parasol_atlas.atlas" (
         @echo Generating emperor parasol atlas.
-        call "_emperor_parasol_atlas_generator.bat"
+        python3 atlasgen.py "_emperor_parasol_atlas.atlas"
     )
-    if exist "_bc_fungus_atlas_generator.bat" (
+    if exist "_bc_fungus_atlas.atlas" (
         @echo Generating fungus atlas.
-        call "_bc_fungus_atlas_generator.bat"
+        python3 atlasgen.py "_bc_fungus_atlas.atlas"
     )
-    if exist "_hlaalu_atlas_generator.bat" (
+    if exist "_hlaalu_atlas.atlas" (
         @echo Generating hlaalu atlas.
-        call "_hlaalu_atlas_generator.bat"
+        python3 atlasgen.py "_hlaalu_atlas.atlas"
     )
-    if exist "_imperial_atlas_generator.bat" (
+    if exist "_imperial_atlas.atlas" (
         @echo Generating imperial atlas.
-        call "_imperial_atlas_generator.bat"
+        python3 atlasgen.py "_imperial_atlas.atlas"
     )
-    if exist "_kelp_atlas_generator.bat" (
+    if exist "_kelp_atlas.atlas" (
         @echo Generating kelp atlas.
-        call "_kelp_atlas_generator.bat"
+        python3 atlasgen.py "_kelp_atlas.atlas"
     )
-    if exist "_limeware_atlas_generator.bat" (
+    if exist "_limeware_atlas.atlas" (
         @echo Generating limeware atlas.
-        call "_limeware_atlas_generator.bat"
+        python3 atlasgen.py "_limeware_atlas.atlas"
     )
-    if exist "_w_mace_molag_bal_atlas_generator.bat" (
+    if exist "_w_mace_molag_bal_atlas.atlas" (
         @echo Generating Mace of Molag Bal atlas.
-        call "_w_mace_molag_bal_atlas_generator.bat"
+        python3 atlasgen.py "_w_mace_molag_bal_atlas.atlas"
     )
-    if exist "_bc_mushrooms_atlas_generator.bat" (
+    if exist "_bc_mushrooms_atlas.atlas" (
         @echo Generating mushrooms atlas.
-        call "_bc_mushrooms_atlas_generator.bat"
+        python3 atlasgen.py "_bc_mushrooms_atlas.atlas"
     )
-    if exist "_bc_mushrooms_only_atlas_generator.bat" (
+    if exist "_bc_mushrooms_only_atlas.atlas" (
         @echo Generating mushrooms only atlas.
-        call "_bc_mushrooms_only_atlas_generator.bat"
+        python3 atlasgen.py "_bc_mushrooms_only_atlas.atlas"
     )
-    if exist "_nord_atlas_generator.bat" (
+    if exist "_nord_atlas.atlas" (
         @echo Generating nord common atlas.
-        call "_nord_atlas_generator.bat"
+        python3 atlasgen.py "_nord_atlas.atlas"
     )
-    if exist "_redoran_atlas_generator.bat" (
+    if exist "_redoran_atlas.atlas" (
         @echo Generating redoran atlas.
-        call _redoran_atlas_generator.bat
+        python3 atlasgen.py _redoran_atlas.atlas
     )
-    if exist "_redware_atlas_generator.bat" (
+    if exist "_redware_atlas.atlas" (
         @echo Generating redware atlas.
-        call "_redware_atlas_generator.bat"
+        python3 atlasgen.py "_redware_atlas.atlas"
     )
-    if exist "_redware_pot_atlas_generator.bat" (
+    if exist "_redware_pot_atlas.atlas" (
         @echo Generating redware pot atlas.
-        call "_redware_pot_atlas_generator.bat"
+        python3 atlasgen.py "_redware_pot_atlas.atlas"
     )
-    if exist "_shack_atlas_generator.bat" (
+    if exist "_shack_atlas.atlas" (
         @echo Generating shack atlas.
-        call "_shack_atlas_generator.bat"
+        python3 atlasgen.py "_shack_atlas.atlas"
     )
-    if exist "_ship_atlas_generator.bat" (
+    if exist "_ship_atlas.atlas" (
         @echo Generating ship atlas.
-        call "_ship_atlas_generator.bat"
+        python3 atlasgen.py "_ship_atlas.atlas"
     )
-    if exist "_silt_strider_atlas_generator.bat" (
+    if exist "_silt_strider_atlas.atlas" (
         @echo Generating silt strider atlas.
-        call "_silt_strider_atlas_generator.bat"
+        python3 atlasgen.py "_silt_strider_atlas.atlas"
     )
-    if exist "_silverware_atlas_generator.bat" (
+    if exist "_silverware_atlas.atlas" (
         @echo Generating silverware atlas.
-        call "_silverware_atlas_generator.bat"
+        python3 atlasgen.py "_silverware_atlas.atlas"
     )
-    if exist "_sixth_house_atlas_generator.bat" (
+    if exist "_sixth_house_atlas.atlas" (
         @echo Generating Sixth House atlas.
-        call "_sixth_house_atlas_generator.bat"
+        python3 atlasgen.py "_sixth_house_atlas.atlas"
     )
-    if exist "_skeleton_atlas_generator.bat" (
+    if exist "_skeleton_atlas.atlas" (
         @echo Generating skeleton atlas.
-        call "_skeleton_atlas_generator.bat"
+        python3 atlasgen.py "_skeleton_atlas.atlas"
     )
-    if exist "_stat_saints_atlas_generator.bat" (
+    if exist "_stat_saints_atlas.atlas" (
         @echo Generating saints statues atlas.
-        call "_stat_saints_atlas_generator.bat"
+        python3 atlasgen.py "_stat_saints_atlas.atlas"
     )
-    if exist "_urn_atlas_generator.bat" (
+    if exist "_urn_atlas.atlas" (
         @echo Generating urn atlas.
-        call "_urn_atlas_generator.bat"
+        python3 atlasgen.py "_urn_atlas.atlas"
     )
-    if exist "_velothi_atlas_generator.bat" (
+    if exist "_velothi_atlas.atlas" (
         @echo Generating velothi tileset atlas.
-        call "_velothi_atlas_generator.bat"
+        python3 atlasgen.py "_velothi_atlas.atlas"
     )
-    if exist "_wood_docks_generator.bat" (
+    if exist "_wood_docks.atlas" (
         @echo Generating wood docks atlas.
-        call "_wood_docks_generator.bat"
+        python3 atlasgen.py "_wood_docks.atlas"
     )
-    if exist "_woodpoles_atlas_generator.bat" (
+    if exist "_woodpoles_atlas.atlas" (
         @echo Generating wood poles atlas.
-        call "_woodpoles_atlas_generator.bat"
+        python3 atlasgen.py "_woodpoles_atlas.atlas"
     )
-    if exist "_furn_basket_atlas_generator.bat" (
+    if exist "_furn_basket_atlas.atlas" (
         @echo Generating large basket atlas.
-        call "_furn_basket_atlas_generator.bat"
+        python3 atlasgen.py "_furn_basket_atlas.atlas"
     )
-    if exist "_a_cuirass_ebon_atlas_generator.bat" (
+    if exist "_a_cuirass_ebon_atlas.atlas" (
         @echo Generating Ebony Mail atlas.
-        call "_a_cuirass_ebon_atlas_generator.bat"
+        python3 atlasgen.py "_a_cuirass_ebon_atlas.atlas"
     )
-    if exist "_a_helm_bearclaw_atlas_generator.bat" (
+    if exist "_a_helm_bearclaw_atlas.atlas" (
         @echo Generating Helm of Oreyn Bearclaw atlas.
-        call "_a_helm_bearclaw_atlas_generator.bat"
+        python3 atlasgen.py "_a_helm_bearclaw_atlas.atlas"
     )
-    if exist "_a_boots_apostle_atlas_generator.bat" (
+    if exist "_a_boots_apostle_atlas.atlas" (
         @echo Generating Boots of the Apostle atlas.
-        call "_a_boots_apostle_atlas_generator.bat"
+        python3 atlasgen.py "_a_boots_apostle_atlas.atlas"
     )
-    if exist "_a_helm_red_watch_atlas_generator.bat" (
+    if exist "_a_helm_red_watch_atlas.atlas" (
         @echo Generating Redoran Watchman Helm atlas.
-        call "_a_helm_red_watch_atlas_generator.bat"
+        python3 atlasgen.py "_a_helm_red_watch_atlas.atlas"
     )
     pause
 )

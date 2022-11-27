@@ -1,0 +1,13 @@
+[variables]
+bittergreenH = 128
+
+[widths]
+Tx_bittergreen_01.dds = 64
+Tx_stoneflower_01.dds = 64
+Tx_stoneflower_02.dds = 64
+
+[commands]
+# Use an offset to avoid producing multiple tiles from the crop
+Tx_bittergreen_01.dds -fill "#1b581f" -colorize 17 -crop 25%x50%+0+{bittergreenH/2} mpr:stem
+Tx_stoneflower_01.dds mpr:stem -gravity southwest +composite mpr:temp2
+mpr:temp2 Tx_stoneflower_02.dds +append  ATL/atlad_stoneflower.dds

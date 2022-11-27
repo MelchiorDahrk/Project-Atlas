@@ -1,0 +1,18 @@
+[variables]
+resolutionW = 256
+
+[widths]
+tx_rope_heavy.dds = 128
+tx_wood_barnacle_01.dds = 128
+tx_wood_barnacle_02.dds = 128
+tx_wood_dock_rings.dds = 64
+tx_wood_docks_01.dds = 128
+tx_wood_weathered_rings.dds = 64
+
+[commands]
+tx_wood_dock_rings.dds tx_wood_weathered_rings.dds -resize {resolutionW/4} -append ATL/temp1.bmp
+tx_rope_heavy.dds tx_rope_heavy.dds -rotate 90 +append ATL/temp2.bmp
+ATL/temp2.bmp ATL/temp2.bmp -append ATL/temp3.bmp
+tx_wood_barnacle_01.dds tx_wood_barnacle_01.dds -rotate -180 -append ATL/temp4.bmp
+tx_wood_barnacle_02.dds tx_wood_barnacle_02.dds -rotate 90 -append ATL/temp5.bmp
+tx_wood_docks_01.dds ATL/temp4.bmp ATL/temp5.bmp ATL/temp3.bmp ATL/temp1.bmp -background "#35332a" +append   ATL/atlad_wood_docks.dds
