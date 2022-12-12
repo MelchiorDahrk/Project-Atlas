@@ -4,7 +4,6 @@ Sheogorath Statue
 resolutionH = 512
 
 [widths]
-tx_daed_azura_face.dds = 256
 tx_daed_sheogorath_ear.dds = 32
 tx_daed_sheogorath_hand.dds = 64
 tx_daed_sheogorath_head.dds = 128

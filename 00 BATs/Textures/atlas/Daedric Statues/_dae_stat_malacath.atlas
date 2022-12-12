@@ -1,7 +1,6 @@
 Malacath Statue
 
 [widths]
-tx_daed_azura_face.dds = 256
 # vanilla is 512
 tx_daed_malacath_backtorso.dds = 256
 tx_daed_malacath_belt_center_piece.dds = 64
