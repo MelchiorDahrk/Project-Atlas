@@ -244,11 +244,14 @@ def generate_atlas(atlas: AtlasGen, multiplier: Optional[Fraction] = None):
         new_command.append(output)
         combined_commands.extend(["("] + new_command + [")"])
     # null: is necessary since there is no final output. Each command has its own output.
+    print("Running imagemagick")
     check_call(
         ["magick", "convert", "-respect-parentheses"] + combined_commands + ["null:"],
     )
 
     # Clean up temporary files
+    if outputs:
+        print("Cleaning up")
     for filename in outputs:
         if filename.lower().endswith(".bmp"):
             os.remove(filename)
