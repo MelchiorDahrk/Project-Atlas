@@ -1,0 +1,23 @@
+Redoran
+
+[variables]
+resolutionH = 1024
+
+[widths]
+tx_block_adobe_white_01.dds = 128
+tx_border_redoran_step_01.dds = 128
+tx_redoran_barracks_trim.dds = 128
+tx_redoran_brokenedge_01.dds = 64
+tx_redoran_hut_00.dds = 256
+tx_redoran_hut_03.dds = 128
+tx_redoran_marble_red.dds = 256
+tx_redoran_marble_white.dds = 256
+tx_redoran_tavern_01.dds = 256
+
+[commands]
+tx_redoran_barracks_trim.dds tx_redoran_barracks_trim.dds +append ATL/temp1.bmp
+tx_border_redoran_step_01.dds tx_border_redoran_step_01.dds +append ATL/temp2.bmp
+tx_block_adobe_white_01.dds tx_redoran_hut_03.dds +append ATL/temp3.bmp
+tx_redoran_brokenedge_01.dds tx_redoran_brokenedge_01.dds tx_redoran_brokenedge_01.dds tx_redoran_brokenedge_01.dds +append ATL/temp4.bmp
+tx_redoran_marble_red.dds tx_redoran_marble_white.dds tx_redoran_tavern_01.dds ATL/temp1.bmp ATL/temp1.bmp ATL/temp2.bmp ATL/temp3.bmp ATL/temp3.bmp  -append -gravity north -background black -extent x{resolutionH}  ATL/tx_redoran_atlas.dds
+tx_redoran_hut_00.dds tx_redoran_hut_00.dds tx_redoran_hut_00.dds ATL/temp1.bmp ATL/temp1.bmp ATL/temp4.bmp ATL/temp4.bmp ATL/temp2.bmp ATL/temp2.bmp  -append -gravity north -background black -extent x{resolutionH}  ATL/tx_redwall_atlas.dds

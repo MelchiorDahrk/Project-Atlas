@@ -1,0 +1,21 @@
+Bottles
+
+[widths]
+Tx_glass_bottle_blue.dds = 64
+Tx_glass_bottle_blue_01.dds = 64
+Tx_glass_bottle_brown.dds = 64
+Tx_glass_bottle_brown_01.dds = 64
+Tx_glass_bottle_green.dds = 64
+Tx_glass_bottle_green_01.dds = 64
+# Vanilla is actually 128, but it needs to be the same width as the rest for this atlas
+Tx_straw_woven.dds = 64
+Tx_wicker_tan.dds = 64
+tx_cork_01.dds = 32
+
+[commands]
+tx_cork_01.dds tx_cork_01.dds +append ATL/temp4.bmp
+Tx_straw_woven.dds Tx_straw_woven.dds Tx_wicker_tan.dds Tx_wicker_tan.dds -append ATL/temp5.bmp
+ATL/temp5.bmp ATL/temp4.bmp -gravity west +composite ATL/temp6.bmp
+Tx_glass_bottle_blue_01.dds Tx_glass_bottle_blue.dds ATL/temp6.bmp  -append ATL/atlad_bottle_bl.dds
+Tx_glass_bottle_brown_01.dds Tx_glass_bottle_brown.dds ATL/temp6.bmp  -append ATL/atlad_bottle_br.dds
+Tx_glass_bottle_green_01.dds Tx_glass_bottle_green.dds ATL/temp6.bmp  -append ATL/atlad_bottle_gr.dds

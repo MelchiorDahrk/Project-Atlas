@@ -1,0 +1,77 @@
+Bloodmoon Colony Tileset
+
+[variables]
+woodHeight = 4096
+stoneHeight = 2048
+roofHeight = 2048
+
+[widths]
+tx_colony_base.dds = 128
+tx_colony_chemney.dds = 256
+tx_colony_chemney03.dds = 256
+tx_colony_chemney04.dds = 256
+tx_colony_chemney05.dds = 256
+tx_colony_chemney07.dds = 256
+tx_colony_chemney08.dds = 256
+tx_colony_floor01.dds = 512
+tx_colony_floor02.dds = 512
+tx_colony_icecles01.dds = 512
+tx_colony_icecles02.dds = 512
+tx_colony_rock01.dds = 128
+tx_colony_rock02.dds = 128
+tx_colony_rock03.dds = 128
+tx_colony_rock04.dds = 128
+tx_colony_roof.dds = 512
+tx_colony_roof02.dds = 256
+tx_colony_roof03.dds = 256
+tx_colony_roof04.dds = 512
+tx_colony_stone01.dds = 256
+tx_colony_stone02.dds = 256
+tx_colony_stone03.dds = 256
+tx_colony_wood01.dds = 128
+tx_colony_wood02.dds = 128
+tx_colony_wood03.dds = 512
+tx_colony_wood04.dds = 512
+tx_colony_wood05.dds = 64
+tx_colony_wood06.dds = 128
+tx_colony_wood07.dds = 64
+tx_colony_wood08.dds = 512
+tx_colony_wood09.dds = 512
+tx_colony_wood10.dds = 32
+tx_colony_wood11.dds = 512
+tx_colony_wood12.dds = 128
+tx_colony_wood13.dds = 128
+tx_colony_wood14.dds = 256
+tx_colony_wood15.dds = 512
+tx_colony_wooddoor01.dds = 256
+tx_colony_wooddoor02.dds = 256
+tx_colony_woodpanel01.dds = 256
+tx_colony_woodpanel02.dds = 256
+tx_colony_woodpanel03.dds = 512
+tx_colony_woodpanel04.dds = 256
+tx_colony_woodpanel05.dds = 256
+
+[commands]
+tx_colony_wood01.dds tx_colony_wood02.dds tx_colony_wood06.dds +append ATL/temp1.bmp
+ATL/temp1.bmp ATL/temp1.bmp -rotate 90 +append ATL/temp2.bmp
+tx_colony_wood12.dds tx_colony_wood12.dds tx_colony_wood13.dds tx_colony_wood13.dds -rotate -90 +append ATL/temp3.bmp
+tx_colony_wood14.dds tx_colony_wood14.dds +append ATL/temp4.bmp
+tx_colony_woodpanel01.dds tx_colony_woodpanel02.dds +append ATL/temp5.bmp
+tx_colony_woodpanel04.dds tx_colony_woodpanel05.dds -append ATL/temp6.bmp
+ATL/temp6.bmp ATL/temp6.bmp +append ATL/temp7.bmp
+tx_colony_base.dds tx_colony_base.dds tx_colony_base.dds tx_colony_base.dds +append ATL/temp8.bmp
+tx_colony_wooddoor02.dds tx_colony_wooddoor01.dds +append ATL/temp9.bmp
+tx_colony_wood05.dds tx_colony_wood07.dds +append ATL/temp10.bmp
+tx_colony_wood10.dds -rotate 90 +append ATL/temp11.bmp
+tx_colony_floor02.dds ATL/temp10.bmp -background "#180800" -gravity northwest -append ATL/tempx.bmp
+ATL/temp2.bmp tx_colony_wood03.dds tx_colony_wood04.dds tx_colony_wood08.dds ATL/temp11.bmp ATL/temp3.bmp ATL/temp4.bmp tx_colony_wood11.dds tx_colony_wood09.dds tx_colony_wood15.dds ATL/temp5.bmp tx_colony_woodpanel03.dds ATL/temp7.bmp ATL/temp8.bmp ATL/temp9.bmp tx_colony_floor01.dds ATL/tempx.bmp -background "#180800" -gravity northwest  -append -extent x{woodHeight}  ATL/atlad_colony_wood.dds
+
+tx_colony_chemney.dds tx_colony_chemney03.dds tx_colony_chemney04.dds -append ATL/temp15.bmp
+tx_colony_chemney05.dds tx_colony_chemney08.dds tx_colony_chemney07.dds -append ATL/temp12.bmp
+ATL/temp15.bmp ATL/temp12.bmp +append ATL/temp13.bmp
+tx_colony_roof02.dds tx_colony_roof03.dds +append ATL/temp14.bmp
+tx_colony_roof.dds ATL/temp14.bmp tx_colony_roof04.dds ATL/temp13.bmp tx_colony_icecles01.dds tx_colony_icecles02.dds -background "rgba(0, 0, 0, 0.0)"  -append -extent x{roofHeight} -define dds:compression=dxt5 ATL/atlad_colony_roof.dds
+
+tx_colony_rock01.dds tx_colony_rock01.dds tx_colony_rock02.dds tx_colony_rock03.dds tx_colony_rock04.dds -append ATL/temp16.bmp
+ATL/temp16.bmp ATL/temp16.bmp +append ATL/temp17.bmp
+ATL/temp17.bmp tx_colony_stone01.dds tx_colony_stone01.dds tx_colony_stone02.dds tx_colony_stone03.dds tx_colony_stone03.dds -background "#5a5b56"  -append -extent x{stoneHeight}  ATL/atlad_colony_rock.dds

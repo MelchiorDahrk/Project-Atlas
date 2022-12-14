@@ -1,7 +1,0 @@
-[widths]
-tx_bm_ic_cavedoor_01.dds = 256
-tx_bm_ic_cavedoor_02.dds = 256
-
-[commands]
-tx_bm_ic_cavedoor_02.dds -rotate 90 +append ATL/temp1.bmp
-tx_bm_ic_cavedoor_01.dds ATL/temp1.bmp  -append  ATL/atlad_bm_cavedoor.dds
