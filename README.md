@@ -1,7 +1,7 @@
 # Project Atlas
 
 Project Atlas
-Version: 0.7.1
+Version: 0.7.3
 
 ======= About Project Atlas  =======
 Vanilla Morrowind has objects split into different shapes each using its own unique texture. This is bad for performance and is one of the game's primary FPS bottlenecks. Each shape (even within a single mesh file) requires its own drawcall. There are close to 5,000 different textures in Morrowind's data; many of which are very similar or outright identical and some meshes are split into more than 75 different shapes. Merging those meshes into a single shape which references a single texture atlas is the ideal situation for game performance.
@@ -28,7 +28,6 @@ Installation
 
 Archive is set up to use Sub-Packages for Mash Installers:
 
-	00 BATs --- Used to regenerate atlases. Only needed if you use retextures other than IT or MET; skip otherwise. 
 	00 Core --- Includes all completed atlas sets
 	01 Textures --- Pregenerated atlases made using vanilla textures, Intelligent Textures, or Morrowind Enhanced Textures (MET). Only one is needed.
 
@@ -36,14 +35,12 @@ Archive is set up to use Sub-Packages for Mash Installers:
 
 	02 Urns - Smoothed --- Smoothed mesh replacer for urns
 	03 Redware - Smoothed --- Smoothed mesh replacer for redware pottery
-	04 Redware - Smoothed --- Smoothed mesh replacer for redware pottery
+	04 Emperor Parasols - Smoothed --- Smoothed mesh replacer for emperor parasol mushrooms
 	05 Wood Poles - Hi Res Texture --- Texture replacer for wood poles and rope
-	
 	06 Glow in the Dahrk Patch --- Includes patches for all atlas sets
-
 	07 Graphic Herbalism Patch --- adds GH support to atlased harvestable plants
-
 	08 ILFAS (Improved Lights for All Shaders) Patch --- Carries forward normal/material edits
+	09 BC Mushrooms --- Normal, smoothed, and glowing patch options for BC mushrooms
 
 Manual
 Installation
@@ -86,6 +83,12 @@ vtastek
 Wollibeebee
 
 ======= Changelog =======
+Version 0.7.3
+	Added fomod
+	Updated archive organization
+Version 0.7.2
+	Fixed missing texture on a few Ghostgate meshes
+	Fixed bad shadows on Hlaalu houses
 Version 0.7.1
 	Added Large basket 
 	Updated Velothi atlas - split into two separate atlases for Velothi houses and Vivec-specific textures. 
