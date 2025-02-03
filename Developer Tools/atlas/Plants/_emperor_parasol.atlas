@@ -1,0 +1,11 @@
+Emperor Parasol
+
+[widths]
+tx_emperor_parasol_01.dds = 128
+tx_emperor_parasol_02.dds = 64
+tx_emperor_parasol_03.dds = 32
+
+[commands]
+tx_emperor_parasol_02.dds tx_emperor_parasol_02.dds +append ATL/temp1.bmp
+tx_emperor_parasol_03.dds tx_emperor_parasol_03.dds tx_emperor_parasol_03.dds tx_emperor_parasol_03.dds +append ATL/temp2.bmp
+tx_emperor_parasol_01.dds ATL/temp1.bmp ATL/temp2.bmp ATL/temp2.bmp  -append  ATL/tx_parasol_atlas.dds

@@ -1,0 +1,12 @@
+Coins
+
+[widths]
+tx_coinside_01.dds = 16
+tx_cointop_01.dds = 64
+tx_dwrv_coin00.dds = 64
+tx_dwrv_coin10.dds = 32
+
+[commands]
+tx_coinside_01.dds tx_coinside_01.dds tx_coinside_01.dds tx_coinside_01.dds -rotate 90 +append ATL/temp1.bmp
+tx_dwrv_coin10.dds tx_dwrv_coin10.dds +append ATL/temp2.bmp
+tx_cointop_01.dds ATL/temp1.bmp ATL/temp1.bmp ATL/temp1.bmp ATL/temp1.bmp tx_dwrv_coin00.dds ATL/temp2.bmp ATL/temp2.bmp -append   ATL/atlad_coins.dds

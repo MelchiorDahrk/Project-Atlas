@@ -1,0 +1,19 @@
+Saints Statues
+
+[widths]
+tx_v_st_statue_01.dds = 256
+tx_v_st_statue_02.dds = 256
+tx_v_st_statue_03.dds = 256
+tx_v_st_statue_04.dds = 128
+tx_v_st_statue_05.dds = 64
+tx_v_st_statue_07.dds = 64
+tx_v_st_statue_08.dds = 128
+tx_v_st_statue_09.dds = 256
+tx_v_st_statue_10.dds = 64
+tx_v_st_statue_11.dds = 64
+
+[commands]
+tx_v_st_statue_10.dds tx_v_st_statue_11.dds tx_v_st_statue_05.dds tx_v_st_statue_07.dds -append ATL/temp2.bmp
+tx_v_st_statue_04.dds tx_v_st_statue_08.dds -append ATL/temp3.bmp
+ATL/temp3.bmp ATL/temp2.bmp ATL/temp2.bmp +append ATL/temp4.bmp
+tx_v_st_statue_03.dds tx_v_st_statue_09.dds tx_v_st_statue_01.dds tx_v_st_statue_02.dds ATL/temp4.bmp -append   ATL/atlad_stat_saints.dds

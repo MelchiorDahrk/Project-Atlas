@@ -1,0 +1,12 @@
+Redware Pot
+
+[widths]
+tx_item_pot_orange_green.dds = 64
+tx_item_pot_redware_01.dds = 64
+tx_item_pot_redware_02.dds = 32
+tx_item_pot_redware_03.dds = 32
+
+[commands]
+tx_item_pot_redware_03.dds tx_item_pot_redware_03.dds +append ATL/temp1.bmp
+tx_item_pot_redware_02.dds tx_item_pot_redware_02.dds +append ATL/temp2.bmp
+tx_item_pot_orange_green.dds ATL/temp1.bmp ATL/temp2.bmp tx_item_pot_redware_01.dds tx_item_pot_redware_01.dds  -append  ATL/tx_item_pot_redware_atlas.dds

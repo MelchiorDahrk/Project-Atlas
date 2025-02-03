@@ -1,0 +1,12 @@
+Ashtree
+
+[widths]
+tx_ashtree_bark_01.dds = 256
+tx_ashtree_bark_02.dds = 128
+tx_ashtree_bark_03.dds = 64
+
+[commands]
+tx_ashtree_bark_02.dds tx_ashtree_bark_02.dds +append ATL/temp1.bmp
+tx_ashtree_bark_03.dds tx_ashtree_bark_03.dds -append ATL/temp2.bmp
+ATL/temp2.bmp ATL/temp2.bmp ATL/temp2.bmp ATL/temp2.bmp +append ATL/temp3.bmp
+tx_ashtree_bark_01.dds ATL/temp1.bmp ATL/temp3.bmp -append   ATL/atlad_ashtree.dds

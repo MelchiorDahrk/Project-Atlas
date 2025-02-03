@@ -1,0 +1,32 @@
+Common Tileset
+
+[variables]
+resolutionW = 256
+resolutionT = 768
+
+[widths]
+tx_brickedge_left_01.dds = 32
+tx_brickedge_right_01.dds = 32
+tx_metal_strip_01.dds = 128
+tx_roofedge_01.dds = 32
+tx_rooftop_01.dds = 256
+tx_shingles_01.dds = 256
+tx_stucco_imp_01.dds = 256
+tx_stucco_imp_02.dds = 256
+tx_thatch_01.dds = 256
+tx_wall_brick_imp_01.dds = 256
+tx_wall_stone_02.dds = 256
+tx_wall_stuccostone_01.dds = 256
+tx_wall_stuccostone_e_02.dds = 64
+tx_wall_stuccostone_el_01.dds = 32
+tx_wall_stuccostone_er_01.dds = 32
+tx_window_diamond_01.dds = 64
+
+[commands]
+tx_brickedge_left_01.dds tx_brickedge_right_01.dds -resize x{resolutionW} +append -rotate "90" ATL/temp1.bmp
+tx_roofedge_01.dds -rotate "90" ATL/temp2.bmp
+tx_thatch_01.dds -rotate "90" ATL/temp3.bmp
+tx_wall_stuccostone_el_01.dds tx_wall_stuccostone_e_02.dds tx_wall_stuccostone_er_01.dds -resize x{resolutionW} +append -rotate "90" ATL/temp4.bmp
+tx_window_diamond_01.dds tx_window_diamond_01.dds -append -rotate "270" ATL/temp5.bmp
+tx_metal_strip_01.dds tx_metal_strip_01.dds +append ATL/temp6.bmp
+tx_stucco_imp_02.dds tx_stucco_imp_01.dds tx_wall_brick_imp_01.dds ATL/temp1.bmp tx_shingles_01.dds ATL/temp2.bmp tx_rooftop_01.dds ATL/temp3.bmp tx_wall_stuccostone_01.dds ATL/temp4.bmp tx_wall_stone_02.dds ATL/temp5.bmp ATL/temp6.bmp ATL/temp6.bmp  -append  ATL/tx_nordcommon_atlas.dds
