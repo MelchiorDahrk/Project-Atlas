@@ -1,7 +1,7 @@
 # Project Atlas
 
 Project Atlas
-Version: 0.7.4
+Version: 0.7.5
 
 ======= About Project Atlas  =======
 Vanilla Morrowind has objects split into different shapes each using its own unique texture. This is bad for performance and is one of the game's primary FPS bottlenecks. Each shape (even within a single mesh file) requires its own drawcall. There are close to 5,000 different textures in Morrowind's data; many of which are very similar or outright identical and some meshes are split into more than 75 different shapes. Merging those meshes into a single shape which references a single texture atlas is the ideal situation for game performance.
@@ -75,6 +75,8 @@ vtastek
 Wollibeebee
 
 ======= Changelog =======
+Version 0.7.5
+	Applied fixes from ex_hlaalu_b_13.nif to ex_hlaalu_b_15.nif
 Version 0.7.4
 	Backported collision fixes from MOP
 	Cleaned node names
